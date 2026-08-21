@@ -1,900 +1,404 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>JBM Insights | Business Metrics &amp; Performance</title>
-<meta name="description" content="JBM Insights diseña tableros de Business Intelligence (BI) y analítica comercial: cumplimiento de metas, productividad de la fuerza de venta y desempeño por sucursal y vendedor para empresas B2B." />
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-<!-- Tailwind CSS (CDN, sin build step) -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-        },
-        colors: {
-          navy: {
-            950: '#060f22',
-            900: '#0b1e3d',
-            800: '#12294f',
-            700: '#1a3868',
-            600: '#234a86',
-          },
-          brand: {
-            blue: '#2a78d6',
-            'blue-dark': '#1c5cab',
-            green: '#1baf7a',
-          },
-          status: {
-            good: '#0ca30c',
-            warning: '#fab219',
-            critical: '#d03b3b',
-          },
-        },
-        boxShadow: {
-          card: '0 1px 2px rgba(11,30,61,0.06), 0 8px 24px -8px rgba(11,30,61,0.12)',
-        },
-      },
-    },
-  };
-</script>
-
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-<link rel="icon" type="image/png" href="assets/logo-icon.png" />
-<link rel="stylesheet" href="css/styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Exper360 | Tecnología, Datos y Experiencia de Cliente</title>
+<meta name="description" content="Grupo Exper360 es un holding que agrupa tres empresas especializadas: IntechPro (Tecnología), JBM Insights (BI &amp; Analítica) y CXDIP (Experiencia de Cliente), formando un ecosistema integral para el crecimiento de tu negocio.">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-slate-800 font-sans antialiased">
+<body>
 
-<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<div class="bg-glow" aria-hidden="true"></div>
 
-<!-- ============ HEADER / NAVBAR ============ -->
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="Grupo Exper360 — Inicio">
+      <span class="logo-badge" aria-hidden="true">
+        <img src="assets/logo-icon.png" alt="" width="32" height="32">
+      </span>
+      <span class="logo-text">
+        <span class="logo-group">GRUPO</span>
+        <span class="logo-name">EXPER<em>360</em></span>
+      </span>
+    </a>
 
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-2.5 shrink-0" aria-label="JBM Insights - Inicio">
-        <span class="flex items-center justify-center w-10 h-10 rounded-lg overflow-hidden shrink-0" aria-hidden="true">
-          <img src="assets/logo-icon.png" alt="" class="w-full h-full object-contain" />
-        </span>
-        <span class="leading-tight">
-          <span class="block text-lg font-bold text-navy-900 tracking-tight">JBM Insights</span>
-          <span class="hidden sm:block text-[11px] font-medium text-slate-500 tracking-wide uppercase">Business Metrics &amp; Performance</span>
-        </span>
-      </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#empresas">Empresas</a>
+      <a href="#ecosistema">Ecosistema</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
-      <!-- Desktop nav -->
-      <nav class="hidden lg:flex items-center gap-8" aria-label="Navegación principal">
-        <a href="#servicios" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Servicios</a>
-        <a href="#reportes" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Reportes</a>
-        <a href="#nosotros" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Sobre Nosotros</a>
-        <a href="#contacto" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Contacto</a>
-      </nav>
+    <a href="#contacto" class="btn btn-primary btn-small header-cta">Hablemos</a>
 
-      <div class="hidden lg:block">
-        <a href="#contacto" class="inline-flex items-center gap-2 rounded-lg bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white shadow-card hover:bg-navy-800 transition-colors">
-          Agendar Diagnóstico
-        </a>
-      </div>
-
-      <!-- Mobile toggle -->
-      <button id="mobile-menu-btn" type="button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-navy-900 hover:bg-slate-100 transition-colors" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Abrir menú de navegación</span>
-        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
-        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
-      </button>
-    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-
-  <!-- Mobile nav -->
-  <nav id="mobile-menu" class="lg:hidden hidden border-t border-slate-200 bg-white" aria-label="Navegación móvil">
-    <div class="px-4 py-4 space-y-1">
-      <a href="#servicios" class="mobile-link block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Servicios</a>
-      <a href="#reportes" class="mobile-link block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Reportes</a>
-      <a href="#nosotros" class="mobile-link block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Sobre Nosotros</a>
-      <a href="#contacto" class="mobile-link block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Contacto</a>
-      <a href="#contacto" class="mobile-link block rounded-lg bg-navy-900 px-3 py-3 text-center text-base font-semibold text-white mt-3">Agendar Diagnóstico</a>
-    </div>
-  </nav>
 </header>
 
-<main id="main-content">
+<main>
 
-  <!-- ============ HERO ============ -->
-  <section class="relative overflow-hidden bg-navy-900">
-    <div class="absolute inset-0 hero-mesh" aria-hidden="true"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-      <div class="grid lg:grid-cols-2 gap-14 items-center">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Holding empresarial · Tecnología, Datos &amp; Experiencia</p>
+        <h1>Un ecosistema de <span class="grad-text">tres especialidades</span> para hacer crecer tu negocio.</h1>
+        <p class="hero-lead">
+          Grupo Exper360 agrupa a tres empresas expertas que trabajan como una sola: capturamos información
+          en el punto de contacto, la transformamos en decisiones y gestionamos la experiencia que
+          fideliza a tus clientes.
+        </p>
+        <div class="hero-actions">
+          <a href="#empresas" class="btn btn-primary">Conoce nuestras empresas</a>
+          <a href="#contacto" class="btn btn-ghost">Hablemos de tu proyecto</a>
+        </div>
+        <div class="hero-brands" aria-label="Empresas del grupo">
+          <span class="hero-brand tech">IntechPro</span>
+          <span class="hero-brand bi">JBM Insights</span>
+          <span class="hero-brand cx">CXDIP</span>
+        </div>
+      </div>
 
-        <div class="reveal">
-          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold text-brand-green tracking-wide uppercase ring-1 ring-white/10">
-            BI y Analítica para Gestión Comercial B2B
+      <div class="hero-visual" data-reveal>
+        <div class="orbit-diagram">
+          <svg viewBox="0 0 360 360" class="orbit-svg">
+            <circle cx="180" cy="180" r="150" class="orbit-ring" />
+            <circle cx="180" cy="180" r="150" class="orbit-arc tech" pathLength="100" stroke-dasharray="31 100" stroke-dashoffset="0"/>
+            <circle cx="180" cy="180" r="150" class="orbit-arc bi" pathLength="100" stroke-dasharray="31 100" stroke-dashoffset="-33.3"/>
+            <circle cx="180" cy="180" r="150" class="orbit-arc cx" pathLength="100" stroke-dasharray="31 100" stroke-dashoffset="-66.6"/>
+          </svg>
+          <div class="orbit-center">
+            <span class="orbit-center-num">360°</span>
+            <span class="orbit-center-label">Ciclo Exper</span>
+          </div>
+          <div class="orbit-node node-tech">
+            <span class="node-dot"></span>
+            <span class="node-label">Tech<br><small>Captura</small></span>
+          </div>
+          <div class="orbit-node node-bi">
+            <span class="node-dot"></span>
+            <span class="node-label">BI &amp; Data<br><small>Analiza</small></span>
+          </div>
+          <div class="orbit-node node-cx">
+            <span class="node-dot"></span>
+            <span class="node-label">CX<br><small>Gestiona</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE EL GRUPO -->
+  <section class="about" id="nosotros">
+    <div class="container">
+      <div class="about-head">
+        <div class="section-head about-copy" data-reveal>
+          <p class="eyebrow">Sobre el grupo</p>
+          <h2>Tres empresas, un mismo objetivo: resultados medibles.</h2>
+          <p class="section-lead">
+            Nacimos para cerrar la brecha entre la tecnología que capta datos, la analítica que los convierte
+            en decisiones, y la experiencia de cliente que transforma esas decisiones en resultados. Cada
+            empresa del grupo opera con su propia identidad y equipo especializado, y juntas ofrecen algo
+            que por separado es difícil de conseguir: una mirada 360° del negocio.
+          </p>
+        </div>
+        <div class="brand-plate" data-reveal>
+          <img src="assets/logo-full.png" alt="Logotipo de Grupo Exper360 — Consultoría integral CX, BI &amp; Tech" width="304" height="256">
+        </div>
+      </div>
+
+      <div class="pillars" data-reveal>
+        <div class="pillar">
+          <span class="pillar-icon tech">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
           </span>
-          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] text-white tracking-tight">
-            Impulsa tus ventas con datos, no con corazonadas.
-          </h1>
-          <ul class="mt-6 space-y-3.5 max-w-xl">
-            <li class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-green shrink-0 mt-0.5"></i>
-              <p class="text-lg text-slate-300 leading-relaxed"><span class="font-semibold text-white">Control total:</span> Visualiza el cumplimiento de metas en tiempo real.</p>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-green shrink-0 mt-0.5"></i>
-              <p class="text-lg text-slate-300 leading-relaxed"><span class="font-semibold text-white">Productividad:</span> Mide el rendimiento real de tus ejecutivos y sucursales.</p>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-green shrink-0 mt-0.5"></i>
-              <p class="text-lg text-slate-300 leading-relaxed"><span class="font-semibold text-white">Claridad:</span> Tableros de BI simples, intuitivos y diseñados a tu medida.</p>
-            </li>
+          <h3>Tecnología</h3>
+          <p>Hardware y software que digitaliza el punto de venta y la operación: tótems, e-commerce y pagos.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon bi">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+          </span>
+          <h3>BI &amp; Analítica</h3>
+          <p>Tableros y KPIs que convierten datos comerciales en cumplimiento de metas y productividad real.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon cx">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+          </span>
+          <h3>Experiencia de Cliente</h3>
+          <p>Sistemas CX y Loyalty gestionables que convierten la voz del cliente en planes de acción.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRAS EMPRESAS -->
+  <section class="companies" id="empresas">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Nuestras empresas</p>
+        <h2>Tres marcas especializadas, un mismo estándar de calidad.</h2>
+      </div>
+
+      <div class="company-grid">
+
+        <article class="company-card tech" data-reveal>
+          <div class="company-top">
+            <span class="company-tag">Tecnología</span>
+            <span class="company-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+            </span>
+          </div>
+          <h3 class="company-name">IntechPro</h3>
+          <p class="company-tagline">Tótems, menús digitales, e-commerce &amp; data</p>
+          <p class="company-desc">
+            Equipa restaurantes, cafeterías y tiendas retail con tótems interactivos de autoservicio,
+            cartas digitales personalizables y plataformas e-commerce de alta conversión con pagos
+            integrados.
+          </p>
+          <ul class="company-services">
+            <li>Tótems de autoservicio con pago integrado</li>
+            <li>Menús digitales y comandera de cocina (KDS)</li>
+            <li>Desarrollo e-commerce y dashboards de venta</li>
           </ul>
-          <div class="mt-9 flex flex-col sm:flex-row gap-4">
-            <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-green px-6 py-3.5 text-sm font-semibold text-navy-950 hover:brightness-95 transition shadow-card">
-              Solicitar Cotización
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <a href="#reportes" class="inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 px-6 py-3.5 text-sm font-semibold text-white ring-1 ring-white/20 hover:bg-white/10 transition">
-              <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
-              Ver Demostración de Reporte
-            </a>
-          </div>
-        </div>
-
-        <div class="reveal" style="transition-delay:120ms">
-          <!-- Mini dashboard preview -->
-          <div class="rounded-2xl bg-white shadow-2xl p-5 sm:p-6 ring-1 ring-black/5">
-            <div class="flex items-center justify-between mb-5">
-              <div>
-                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Panel ejecutivo</p>
-                <p class="text-sm font-bold text-navy-900">Desempeño Comercial — Q2</p>
-              </div>
-              <span class="inline-flex items-center gap-1 rounded-full bg-status-good/10 px-2.5 py-1 text-[11px] font-semibold text-status-good">
-                <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
-                En objetivo
-              </span>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              <!-- Cumplimiento de Meta Grupal: tile grande, ancla el panel -->
-              <div class="row-span-2 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-green/10 ring-1 ring-slate-100 p-4 flex flex-col items-center justify-center text-center">
-                <p class="text-[11px] font-medium text-slate-500">Cumplimiento de Meta Grupal</p>
-                <div class="relative w-24 h-24 mt-2">
-                  <svg viewBox="0 0 160 160" class="w-full h-full" role="img" aria-label="Cumplimiento de meta grupal: 108%, meta 100%">
-                    <circle cx="80" cy="80" r="64" fill="none" stroke="#e2e8f0" stroke-width="15"/>
-                    <circle cx="80" cy="80" r="64" fill="none" stroke="#1baf7a" stroke-width="15" stroke-linecap="round" stroke-dasharray="402.12 402.12" transform="rotate(-90 80 80)"/>
-                    <circle cx="80" cy="80" r="64" fill="none" stroke="#2a78d6" stroke-width="15" stroke-linecap="round" stroke-dasharray="32.17 402.12" transform="rotate(-90 80 80)"/>
-                  </svg>
-                  <span class="absolute inset-0 flex items-center justify-center text-xl font-extrabold text-navy-900">108%</span>
-                </div>
-                <p class="mt-2 text-[11px] font-medium text-slate-400">Meta: 100%</p>
-                <span class="mt-2 inline-flex items-center gap-1 rounded-full bg-status-good/10 px-2.5 py-1 text-[11px] font-semibold text-status-good">▲ +8 pts sobre meta</span>
-              </div>
-
-              <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-100">
-                <p class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500"><span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>Vendedores s/ meta</p>
-                <p class="mt-1.5 text-xl font-extrabold text-navy-900">6/8</p>
-                <div class="relative w-full h-1.5 rounded-full bg-slate-200 mt-1.5">
-                  <div class="absolute inset-y-0 left-0 rounded-full bg-brand-green" style="width:75%"></div>
-                  <div class="absolute -top-0.5 -bottom-0.5 w-0.5 rounded-sm bg-slate-400" style="left:62%"></div>
-                </div>
-                <p class="mt-1 text-[10px] font-medium text-slate-400">vs. 5/8 trim. anterior</p>
-              </div>
-              <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-100">
-                <p class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue inline-block"></span>Sucursales en meta</p>
-                <p class="mt-1.5 text-xl font-extrabold text-navy-900">8/10</p>
-                <div class="relative w-full h-1.5 rounded-full bg-slate-200 mt-1.5">
-                  <div class="absolute inset-y-0 left-0 rounded-full bg-brand-blue" style="width:80%"></div>
-                  <div class="absolute -top-0.5 -bottom-0.5 w-0.5 rounded-sm bg-slate-400" style="left:70%"></div>
-                </div>
-                <p class="mt-1 text-[10px] font-medium text-slate-400">vs. 7/10 trim. anterior</p>
-              </div>
-
-              <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-100">
-                <p class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500"><span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>Ventas del mes</p>
-                <p class="mt-1.5 text-xl font-extrabold text-navy-900">$184M</p>
-                <div class="relative w-full h-1.5 rounded-full bg-slate-200 mt-1.5">
-                  <div class="absolute inset-y-0 left-0 rounded-full bg-brand-green" style="width:100%"></div>
-                  <div class="absolute -top-0.5 -bottom-0.5 w-0.5 rounded-sm bg-slate-400" style="left:92%"></div>
-                </div>
-                <p class="mt-1 text-[10px] font-medium text-slate-400">Meta: $170M</p>
-              </div>
-              <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-100">
-                <p class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500"><span class="w-1.5 h-1.5 rounded-full bg-status-warning inline-block"></span>Ticket prom.</p>
-                <p class="mt-1.5 text-xl font-extrabold text-navy-900">$842k</p>
-                <div class="relative w-full h-1.5 rounded-full bg-slate-200 mt-1.5">
-                  <div class="absolute inset-y-0 left-0 rounded-full bg-status-warning" style="width:84.2%"></div>
-                  <div class="absolute -top-0.5 -bottom-0.5 w-0.5 rounded-sm bg-slate-400" style="left:79.9%"></div>
-                </div>
-                <p class="mt-1 text-[10px] font-medium text-slate-400">vs. $799k mes anterior</p>
-              </div>
-            </div>
-
-            <div class="mt-3 rounded-xl bg-slate-50 p-3 ring-1 ring-slate-100">
-              <div class="flex items-center justify-between gap-2 text-[10px] font-medium text-slate-400 mb-1.5">
-                <span>Cumplimiento de Meta</span>
-                <span class="inline-flex items-center gap-1"><span class="inline-block w-3 border-t border-dashed" style="border-color:#e08a00"></span>Año anterior</span>
-                <span>Ene → Jun</span>
-              </div>
-              <div class="relative flex items-end gap-1 h-6">
-                <span class="flex-1 rounded-t bg-brand-blue/45" style="height:43%"></span>
-                <span class="flex-1 rounded-t bg-brand-blue/45" style="height:58%"></span>
-                <span class="flex-1 rounded-t bg-brand-blue/45" style="height:50%"></span>
-                <span class="flex-1 rounded-t bg-brand-blue/45" style="height:72%"></span>
-                <span class="flex-1 rounded-t bg-brand-blue/45" style="height:80%"></span>
-                <span class="flex-1 rounded-t bg-brand-green" style="height:93%"></span>
-                <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 120 24" preserveAspectRatio="none" role="img" aria-label="Cumplimiento de meta año anterior por mes: enero 85%, febrero 86.5%, marzo 86%, abril 88.5%, mayo 90%, junio 92.4%">
-                  <polyline points="10,22 30,21.6 50,22.5 70,18.1 90,15.4 110,11.2" fill="none" stroke="#e08a00" stroke-width="1.6" stroke-dasharray="3 2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="10" cy="22" r="1.6" fill="#e08a00"/>
-                  <circle cx="30" cy="21.6" r="1.6" fill="#e08a00"/>
-                  <circle cx="50" cy="22.5" r="1.6" fill="#e08a00"/>
-                  <circle cx="70" cy="18.1" r="1.6" fill="#e08a00"/>
-                  <circle cx="90" cy="15.4" r="1.6" fill="#e08a00"/>
-                  <circle cx="110" cy="11.2" r="1.6" fill="#e08a00"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SERVICIOS ============ -->
-  <section id="servicios" class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl reveal">
-        <span class="text-sm font-semibold text-brand-blue uppercase tracking-wide">Servicios</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
-          KPIs que convierten venta en resultados
-        </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Cuatro líneas de trabajo con Business Intelligence (BI) y analítica de datos, diseñadas para dar visibilidad completa sobre el cumplimiento de metas, la productividad y el desempeño de tu fuerza de venta.
-        </p>
-      </div>
-
-      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <article class="reveal group rounded-2xl border border-slate-200 p-7 hover:border-brand-blue/40 hover:shadow-card transition-all">
-          <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-navy-900/5 text-navy-900 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-            <i data-lucide="target" class="w-6 h-6"></i>
-          </div>
-          <h3 class="mt-5 text-lg font-bold text-navy-900">Cumplimiento de Metas Comerciales</h3>
-          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">
-            Seguimiento de metas de venta a nivel corporativo, por sucursal y por vendedor, con alertas cuando el avance se aleja del objetivo.
-          </p>
+          <a href="https://www.intechpro.cl/" target="_blank" rel="noopener noreferrer" class="btn btn-outline company-cta">
+            Visitar intechpro.cl
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </article>
 
-        <article class="reveal group rounded-2xl border border-slate-200 p-7 hover:border-brand-blue/40 hover:shadow-card transition-all" style="transition-delay:60ms">
-          <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-navy-900/5 text-navy-900 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-            <i data-lucide="users" class="w-6 h-6"></i>
+        <article class="company-card bi" data-reveal>
+          <div class="company-top">
+            <span class="company-tag">BI &amp; Analítica</span>
+            <span class="company-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+            </span>
           </div>
-          <h3 class="mt-5 text-lg font-bold text-navy-900">Gestión de la Fuerza de Venta</h3>
-          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">
-            Visibilidad de la actividad comercial de cada vendedor: ventas, ticket promedio, cobertura de cartera y ranking de desempeño.
+          <h3 class="company-name">JBM Insights</h3>
+          <p class="company-tagline">BI y analítica para gestión comercial B2B</p>
+          <p class="company-desc">
+            Impulsa la venta con datos, no con corazonadas: tableros de cumplimiento de metas,
+            productividad por sucursal y desempeño de la fuerza de venta, siempre actualizados.
           </p>
+          <ul class="company-services">
+            <li>Cumplimiento de metas comerciales en tiempo real</li>
+            <li>Gestión y ranking de fuerza de venta</li>
+            <li>Dashboards ejecutivos automatizados</li>
+          </ul>
+          <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline company-cta">
+            Visitar JBM Insights
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </article>
 
-        <article class="reveal group rounded-2xl border border-slate-200 p-7 hover:border-brand-blue/40 hover:shadow-card transition-all" style="transition-delay:120ms">
-          <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-navy-900/5 text-navy-900 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-            <i data-lucide="gauge" class="w-6 h-6"></i>
+        <article class="company-card cx" data-reveal>
+          <div class="company-top">
+            <span class="company-tag">Experiencia de Cliente</span>
+            <span class="company-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+            </span>
           </div>
-          <h3 class="mt-5 text-lg font-bold text-navy-900">Productividad Comercial y por Sucursal</h3>
-          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">
-            Indicadores que revelan qué sucursales y equipos de venta rinden por sobre o bajo su capacidad instalada.
+          <h3 class="company-name">CXDIP</h3>
+          <p class="company-tagline">Boutique de experiencias · Sistemas CX a tu medida</p>
+          <p class="company-desc">
+            Convierte la voz de tus clientes en sistemas gestionables y rentabilizables: paneles CX
+            y Loyalty 360°, estudios relacionales y capacitación para todos los niveles de la organización.
           </p>
-        </article>
-
-        <article class="reveal group rounded-2xl border border-slate-200 p-7 hover:border-brand-blue/40 hover:shadow-card transition-all" style="transition-delay:180ms">
-          <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-navy-900/5 text-navy-900 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
-          </div>
-          <h3 class="mt-5 text-lg font-bold text-navy-900">BI y Tableros Automatizados</h3>
-          <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">
-            Business Intelligence aplicado a tu operación: dashboards ejecutivos con actualización automática y analítica avanzada, sin planillas manuales.
-          </p>
+          <ul class="company-services">
+            <li>Paneles CX &amp; Loyalty gerenciales y por sucursal</li>
+            <li>Estudios relacionales y probabilidad de fuga</li>
+            <li>Capacitación CX para frontline y comité ejecutivo</li>
+          </ul>
+          <a href="https://www.cxdip.com/#inicio" target="_blank" rel="noopener noreferrer" class="btn btn-outline company-cta">
+            Visitar CXDIP
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ============ MUESTRA DE VALOR / DASHBOARD ============ -->
-  <section id="reportes" class="py-20 lg:py-28 bg-slate-50 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl reveal">
-        <span class="text-sm font-semibold text-brand-blue uppercase tracking-wide">Reportes</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
-          Así se ve un tablero JBM Insights
-        </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Un ejemplo ilustrativo del tipo de panel de BI y analítica que diseñamos: cumplimiento de metas, tendencia de ventas y desempeño por sucursal, todo en una sola vista.
+  <!-- ECOSISTEMA / CICLO -->
+  <section class="ecosystem" id="ecosistema">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">El ciclo Exper360</p>
+        <h2>Captura, analiza y gestiona: un solo flujo de valor.</h2>
+        <p class="section-lead">
+          Las tres empresas del grupo se conectan en un mismo ciclo. Puedes trabajar con una sola,
+          o integrarlas para cubrir todo el recorrido: desde el punto de contacto con tu cliente
+          hasta la decisión que mejora su experiencia.
         </p>
       </div>
 
-      <div class="mt-12 reveal rounded-2xl bg-white shadow-card ring-1 ring-slate-200 p-6 sm:p-8">
-
-        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 mb-6 border-b border-slate-100">
-          <div>
-            <p class="text-sm font-bold text-navy-900">Panel de Desempeño Comercial</p>
-            <p class="text-xs text-slate-500">Datos de ejemplo con fines demostrativos · Periodo: Ene – Jun</p>
-          </div>
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-status-good/10 px-3 py-1 text-xs font-semibold text-status-good">
-            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
-            Ventas sobre meta
-          </span>
+      <div class="flow" data-reveal>
+        <div class="flow-step">
+          <span class="flow-num tech">01</span>
+          <h3>Captura — IntechPro</h3>
+          <p>Tótems, e-commerce y medios de pago generan datos de cada transacción y comportamiento de compra.</p>
         </div>
-
-        <!-- KPI tiles -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Ventas del Período</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">$184,5M</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-good">
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> +8% vs. trimestre anterior
-            </p>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Cumplimiento de Meta</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">108%</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-good">
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> +8 pts vs. meta (100%)
-            </p>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Sucursales en Meta</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">8/10</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-good">
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> 80% de la red
-            </p>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Ticket Promedio</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">$842.000</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-good">
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> +5.4% vs. mes anterior
-            </p>
-          </div>
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </div>
-
-        <!-- Bar chart: cumplimiento de meta trend -->
-        <div class="mt-8 grid lg:grid-cols-5 gap-8">
-          <div class="lg:col-span-3">
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-sm font-bold text-navy-900">Cumplimiento de Meta — últimos 6 meses</h3>
-              <div class="flex items-center gap-4 text-xs text-slate-500">
-                <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-brand-blue inline-block"></span>Cumplimiento</span>
-                <span class="inline-flex items-center gap-1.5"><span class="w-4 border-t-2 border-dashed border-slate-400 inline-block"></span>Meta 100%</span>
-              </div>
-            </div>
-
-            <div class="relative h-48 pl-8">
-              <!-- target line -->
-              <div class="absolute left-8 right-0 border-t-2 border-dashed border-slate-300" style="bottom:83%" aria-hidden="true"></div>
-              <!-- y-axis labels -->
-              <div class="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] text-slate-400 py-0">
-                <span>120%</span><span>80%</span><span>40%</span><span>0%</span>
-              </div>
-              <div class="ml-8 h-full flex items-end gap-3" role="img" aria-label="Cumplimiento de meta por mes: enero 88%, febrero 92%, marzo 95%, abril 99%, mayo 103%, junio 108%. Meta mensual: 100%.">
-                <div class="group relative flex-1 h-full flex items-end">
-                  <div class="w-full bg-brand-blue/70 rounded-t" style="height:73%"></div>
-                  <div class="chart-tooltip">Ene: 88%</div>
-                </div>
-                <div class="group relative flex-1 h-full flex items-end">
-                  <div class="w-full bg-brand-blue/70 rounded-t" style="height:77%"></div>
-                  <div class="chart-tooltip">Feb: 92%</div>
-                </div>
-                <div class="group relative flex-1 h-full flex items-end">
-                  <div class="w-full bg-brand-blue/70 rounded-t" style="height:79%"></div>
-                  <div class="chart-tooltip">Mar: 95%</div>
-                </div>
-                <div class="group relative flex-1 h-full flex items-end">
-                  <div class="w-full bg-brand-blue/70 rounded-t" style="height:83%"></div>
-                  <div class="chart-tooltip">Abr: 99%</div>
-                </div>
-                <div class="group relative flex-1 h-full flex items-end">
-                  <div class="w-full bg-brand-blue rounded-t" style="height:86%"></div>
-                  <div class="chart-tooltip">May: 103%</div>
-                </div>
-                <div class="group relative flex-1 h-full flex items-end">
-                  <div class="w-full bg-brand-green rounded-t" style="height:90%"></div>
-                  <div class="chart-tooltip">Jun: 108%</div>
-                  <span class="absolute -top-5 left-1/2 -translate-x-1/2 text-[11px] font-bold text-navy-900">108%</span>
-                </div>
-              </div>
-              <div class="ml-8 mt-2 flex gap-3 text-[10px] font-medium text-slate-400">
-                <span class="flex-1 text-center">Ene</span><span class="flex-1 text-center">Feb</span><span class="flex-1 text-center">Mar</span>
-                <span class="flex-1 text-center">Abr</span><span class="flex-1 text-center">May</span><span class="flex-1 text-center">Jun</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Distribución de vendedores por cumplimiento -->
-          <div class="lg:col-span-2">
-            <h3 class="text-sm font-bold text-navy-900 mb-4">Vendedores por Cumplimiento — junio</h3>
-            <div class="flex h-8 w-full rounded-md overflow-hidden ring-1 ring-slate-200" role="img" aria-label="Distribución de vendedores por cumplimiento: 68% sobre meta, 26% cerca de meta, 6% bajo meta">
-              <div class="h-full bg-status-good flex items-center justify-center" style="width:68%">
-                <span class="text-[11px] font-bold text-white">68%</span>
-              </div>
-              <div class="h-full bg-status-warning flex items-center justify-center" style="width:26%">
-                <span class="text-[11px] font-bold text-navy-900">26%</span>
-              </div>
-              <div class="h-full bg-status-critical flex items-center justify-center" style="width:6%">
-                <span class="text-[11px] font-bold text-white">6%</span>
-              </div>
-            </div>
-            <div class="mt-4 space-y-2 text-xs">
-              <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm bg-status-good inline-block"></span><span class="text-slate-600">Sobre meta (68%)</span></div>
-              <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm bg-status-warning inline-block"></span><span class="text-slate-600">Cerca de meta (26%)</span></div>
-              <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm bg-status-critical inline-block"></span><span class="text-slate-600">Bajo meta (6%)</span></div>
-            </div>
-          </div>
+        <div class="flow-step">
+          <span class="flow-num bi">02</span>
+          <h3>Analiza — JBM Insights</h3>
+          <p>Esos datos se transforman en tableros de cumplimiento de metas y productividad comercial.</p>
         </div>
-
-        <!-- sr-only data table (accessible alternative) -->
-        <table class="sr-only">
-          <caption>Cumplimiento de meta mensual y meta</caption>
-          <thead><tr><th>Mes</th><th>Cumplimiento</th><th>Meta</th></tr></thead>
-          <tbody>
-            <tr><td>Enero</td><td>88%</td><td>100%</td></tr>
-            <tr><td>Febrero</td><td>92%</td><td>100%</td></tr>
-            <tr><td>Marzo</td><td>95%</td><td>100%</td></tr>
-            <tr><td>Abril</td><td>99%</td><td>100%</td></tr>
-            <tr><td>Mayo</td><td>103%</td><td>100%</td></tr>
-            <tr><td>Junio</td><td>108%</td><td>100%</td></tr>
-          </tbody>
-        </table>
-
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="flow-step">
+          <span class="flow-num cx">03</span>
+          <h3>Gestiona — CXDIP</h3>
+          <p>Los insights se accionan en la experiencia del cliente: retención, loyalty y planes de mejora.</p>
+        </div>
+        <div class="flow-loop" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 6M20 4v4h-4"/></svg>
+          <span>y vuelve a empezar</span>
+        </div>
       </div>
-
-      <!-- ============ CUMPLIMIENTO DE METAS Y PRODUCTIVIDAD DE VENDEDORES ============ -->
-      <div class="mt-8 reveal rounded-2xl bg-white shadow-card ring-1 ring-slate-200 p-6 sm:p-8">
-
-        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 mb-6 border-b border-slate-100">
-          <div>
-            <p class="text-sm font-bold text-navy-900">Cumplimiento de Metas y Productividad de Vendedores</p>
-            <p class="text-xs text-slate-500">Datos de ejemplo con fines demostrativos · Periodo: Junio</p>
-          </div>
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-status-good/10 px-3 py-1 text-xs font-semibold text-status-good">
-            <i data-lucide="target" class="w-3.5 h-3.5"></i>
-            Meta grupal superada
-          </span>
-        </div>
-
-        <!-- KPI tiles -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Cumplimiento de Meta Grupal</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">108%</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-good">
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> +8 pts vs. meta (100%)
-            </p>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Vendedores sobre meta</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">6 / 8</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-good">
-              <i data-lucide="users" class="w-3.5 h-3.5"></i> 75% del equipo
-            </p>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Ticket Promedio</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">$842.000</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-good">
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> +5.4% vs. mes anterior
-            </p>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Vendedores bajo meta</p>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900">2 / 8</p>
-            <p class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-status-critical">
-              <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i> requieren plan de acción
-            </p>
-          </div>
-        </div>
-
-        <!-- Ranking de productividad por vendedor -->
-        <div class="mt-8">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-sm font-bold text-navy-900">Ranking de productividad por vendedor — junio</h3>
-            <span class="text-xs text-slate-500">Meta individual mensual</span>
-          </div>
-          <div class="overflow-x-auto -mx-2 px-2">
-            <table class="w-full text-sm border-collapse">
-              <thead>
-                <tr class="text-left text-xs font-semibold text-slate-500 uppercase tracking-wide border-b border-slate-200">
-                  <th scope="col" class="py-2.5 pr-3">Vendedor</th>
-                  <th scope="col" class="py-2.5 pr-3">Meta</th>
-                  <th scope="col" class="py-2.5 pr-3">Ventas reales</th>
-                  <th scope="col" class="py-2.5 pr-3 min-w-[160px]">% Cumplimiento</th>
-                  <th scope="col" class="py-2.5 pl-3">Estado</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100">
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Camila Rojas</td>
-                  <td class="py-3 pr-3 text-slate-600">$12.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$14.500.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-good" style="width:100%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">121%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-good/10 px-2.5 py-1 text-[11px] font-semibold text-status-good">Sobresaliente</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Andrés Pino</td>
-                  <td class="py-3 pr-3 text-slate-600">$8.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$9.600.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-good" style="width:100%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">120%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-good/10 px-2.5 py-1 text-[11px] font-semibold text-status-good">Sobresaliente</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Martín Silva</td>
-                  <td class="py-3 pr-3 text-slate-600">$10.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$11.200.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-good" style="width:100%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">112%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-good/10 px-2.5 py-1 text-[11px] font-semibold text-status-good">Sobre meta</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Tomás Vidal</td>
-                  <td class="py-3 pr-3 text-slate-600">$7.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$7.350.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-good" style="width:100%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">105%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-good/10 px-2.5 py-1 text-[11px] font-semibold text-status-good">Sobre meta</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Valentina Muñoz</td>
-                  <td class="py-3 pr-3 text-slate-600">$10.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$10.050.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-good" style="width:100%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">100.5%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-good/10 px-2.5 py-1 text-[11px] font-semibold text-status-good">En meta</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Diego Fuentes</td>
-                  <td class="py-3 pr-3 text-slate-600">$9.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$8.700.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-warning" style="width:97%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">97%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-warning/10 px-2.5 py-1 text-[11px] font-semibold text-status-warning">Cerca de meta</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Javiera Torres</td>
-                  <td class="py-3 pr-3 text-slate-600">$9.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$8.100.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-warning" style="width:90%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">90%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-warning/10 px-2.5 py-1 text-[11px] font-semibold text-status-warning">Bajo meta</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 pr-3 font-medium text-navy-900">Francisca León</td>
-                  <td class="py-3 pr-3 text-slate-600">$8.000.000</td>
-                  <td class="py-3 pr-3 text-slate-600">$6.400.000</td>
-                  <td class="py-3 pr-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-2 w-full max-w-[120px] rounded-full bg-slate-100 overflow-hidden">
-                        <div class="h-full rounded-full bg-status-critical" style="width:80%"></div>
-                      </div>
-                      <span class="text-xs font-semibold text-navy-900">80%</span>
-                    </div>
-                  </td>
-                  <td class="py-3 pl-3">
-                    <span class="inline-flex items-center gap-1 rounded-full bg-status-critical/10 px-2.5 py-1 text-[11px] font-semibold text-status-critical">Crítico</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ============ VARIACIÓN MENSUAL Y ANUAL ============ -->
-      <div class="mt-8 reveal rounded-2xl bg-white shadow-card ring-1 ring-slate-200 p-6 sm:p-8">
-
-        <div class="pb-6 mb-6 border-b border-slate-100">
-          <p class="text-sm font-bold text-navy-900">Variación Mensual y Anual</p>
-          <p class="text-xs text-slate-500">Datos de ejemplo con fines demostrativos · Comparativo de KPIs clave — junio</p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Ventas del Período</p>
-            <p class="mt-2 text-2xl font-extrabold text-navy-900">$184,5M</p>
-            <div class="mt-3 space-y-1.5 pt-3 border-t border-slate-100">
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. mes anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+8%</span>
-              </div>
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. año anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+15%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Cumplimiento de Meta</p>
-            <p class="mt-2 text-2xl font-extrabold text-navy-900">108%</p>
-            <div class="mt-3 space-y-1.5 pt-3 border-t border-slate-100">
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. mes anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+8 pts</span>
-              </div>
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. año anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+15 pts</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Vendedores sobre Meta</p>
-            <p class="mt-2 text-2xl font-extrabold text-navy-900">75%</p>
-            <div class="mt-3 space-y-1.5 pt-3 border-t border-slate-100">
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. mes anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+12.5 pts</span>
-              </div>
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. año anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+25 pts</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Productividad (ticket prom.)</p>
-            <p class="mt-2 text-2xl font-extrabold text-navy-900">$842.000</p>
-            <div class="mt-3 space-y-1.5 pt-3 border-t border-slate-100">
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. mes anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+5.4%</span>
-              </div>
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. año anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+12.8%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="rounded-xl border border-slate-200 p-5">
-            <p class="text-xs font-medium text-slate-500">Tiempo Prom. de Cierre</p>
-            <p class="mt-2 text-2xl font-extrabold text-navy-900">9.2 días</p>
-            <div class="mt-3 space-y-1.5 pt-3 border-t border-slate-100">
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. mes anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-critical"><i data-lucide="arrow-up-right" class="w-3 h-3"></i>+0.4 días</span>
-              </div>
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-400">vs. año anterior</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-status-good"><i data-lucide="arrow-down-right" class="w-3 h-3"></i>−1.1 días</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <p class="mt-6 text-[11px] text-slate-400 leading-relaxed">
-          El color indica si la variación fue favorable (verde) o desfavorable (rojo) para el negocio, no el signo aritmético. Por eso una reducción en el tiempo de cierre se muestra en verde: menos días es una mejora.
-        </p>
-
-      </div>
-
     </div>
   </section>
 
-  <!-- ============ METODOLOGÍA ============ -->
-  <section id="nosotros" class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl reveal">
-        <span class="text-sm font-semibold text-brand-blue uppercase tracking-wide">Metodología</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
-          Cómo trabajamos
-        </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Un proceso de cuatro etapas, replicable y adaptado a la madurez analítica de tu organización.
-        </p>
+  <!-- POR QUÉ -->
+  <section class="why">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Por qué Grupo Exper360</p>
+        <h2>Un solo interlocutor para todo el recorrido de tu cliente.</h2>
       </div>
-
-      <ol class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-        <li class="reveal relative">
-          <div class="flex items-center gap-3">
-            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-navy-900 text-white text-sm font-bold shrink-0">1</span>
-            <div class="hidden lg:block h-px flex-1 bg-slate-200"></div>
-          </div>
-          <h3 class="mt-5 text-base font-bold text-navy-900">Diagnóstico</h3>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Relevamos procesos, fuentes de datos y madurez actual de medición.</p>
-        </li>
-        <li class="reveal relative" style="transition-delay:60ms">
-          <div class="flex items-center gap-3">
-            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-navy-900 text-white text-sm font-bold shrink-0">2</span>
-            <div class="hidden lg:block h-px flex-1 bg-slate-200"></div>
-          </div>
-          <h3 class="mt-5 text-base font-bold text-navy-900">Diseño de KPIs</h3>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Definimos los indicadores correctos para tu negocio, con metas claras.</p>
-        </li>
-        <li class="reveal relative" style="transition-delay:120ms">
-          <div class="flex items-center gap-3">
-            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-navy-900 text-white text-sm font-bold shrink-0">3</span>
-            <div class="hidden lg:block h-px flex-1 bg-slate-200"></div>
-          </div>
-          <h3 class="mt-5 text-base font-bold text-navy-900">Implementación de Tableros</h3>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Construimos dashboards automatizados conectados a tus fuentes de datos.</p>
-        </li>
-        <li class="reveal relative" style="transition-delay:180ms">
-          <div class="flex items-center gap-3">
-            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-navy-900 text-white text-sm font-bold shrink-0">4</span>
-          </div>
-          <h3 class="mt-5 text-base font-bold text-navy-900">Análisis y Mejora Continua</h3>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Acompañamos la lectura de resultados y ajustamos indicadores con el tiempo.</p>
-        </li>
-      </ol>
+      <div class="why-grid" data-reveal>
+        <div class="why-card">
+          <h3>Ecosistema integral</h3>
+          <p>Tecnología, datos y experiencia trabajando en conjunto en lugar de proveedores aislados.</p>
+        </div>
+        <div class="why-card">
+          <h3>Equipos especializados</h3>
+          <p>Cada empresa mantiene foco y expertise en su disciplina, con estándares compartidos de calidad.</p>
+        </div>
+        <div class="why-card">
+          <h3>Escalable a tu ritmo</h3>
+          <p>Empieza con una empresa del grupo y suma las demás cuando tu negocio lo necesite.</p>
+        </div>
+        <div class="why-card">
+          <h3>Un punto de contacto</h3>
+          <p>Coordinamos internamente entre las tres marcas para simplificar la gestión de tu proyecto.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ CTA BANNER ============ -->
-  <section class="bg-navy-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">¿Listo para que tu fuerza de venta cumpla la meta?</h2>
-          <p class="mt-2 text-slate-300">Agenda un diagnóstico gratuito de 30 minutos con nuestro equipo.</p>
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="container contact-inner">
+      <div class="contact-copy" data-reveal>
+        <p class="eyebrow">Contacto</p>
+        <h2>Conversemos sobre tu proyecto.</h2>
+        <p class="section-lead">
+          Cuéntanos qué necesitas y te conectamos con la empresa del grupo (o la combinación de ellas)
+          que mejor se ajusta a tu negocio.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+            <a href="mailto:contacto@exper360.cl">contacto@exper360.cl</a>
+            <small>(reemplazar por el correo definitivo)</small>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></span>
+            <a href="tel:+56900000000">+56 9 XXXX XXXX</a>
+            <small>(reemplazar por el teléfono definitivo)</small>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span>Santiago, Chile</span>
+            <small>(reemplazar por la dirección definitiva)</small>
+          </li>
+        </ul>
+        <div class="contact-brands">
+          <a href="https://www.intechpro.cl/" target="_blank" rel="noopener noreferrer">IntechPro ↗</a>
+          <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener noreferrer">JBM Insights ↗</a>
+          <a href="https://www.cxdip.com/#inicio" target="_blank" rel="noopener noreferrer">CXDIP ↗</a>
         </div>
-        <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-green px-7 py-3.5 text-sm font-semibold text-navy-950 hover:brightness-95 transition shadow-card shrink-0">
-          Agendar Diagnóstico
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
       </div>
+
+      <form class="contact-form" data-reveal action="mailto:contacto@exper360.cl" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="Nombre" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="Correo" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="company-interest">Empresa de interés</label>
+          <select id="company-interest" name="Interes">
+            <option value="No estoy seguro / quiero orientación">No estoy seguro / quiero orientación</option>
+            <option value="IntechPro (Tecnología)">IntechPro (Tecnología)</option>
+            <option value="JBM Insights (BI y Analítica)">JBM Insights (BI y Analítica)</option>
+            <option value="CXDIP (Experiencia de Cliente)">CXDIP (Experiencia de Cliente)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="Mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Enviar mensaje</button>
+        <p class="form-note">Al enviar, se abrirá tu cliente de correo predeterminado hacia contacto@exper360.cl.</p>
+      </form>
     </div>
   </section>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer id="contacto" class="bg-navy-950 text-slate-400">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-      <div class="lg:col-span-1">
-        <a href="#" class="flex items-center gap-2.5" aria-label="JBM Insights - Inicio">
-          <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-white p-1 shrink-0" aria-hidden="true">
-            <img src="assets/logo-icon.png" alt="" class="w-full h-full object-contain" />
-          </span>
-          <span class="text-lg font-bold text-white">JBM Insights</span>
-        </a>
-        <p class="mt-4 text-sm leading-relaxed">
-          Business Metrics &amp; Performance. Convertimos datos comerciales en decisiones ejecutivas.
-        </p>
-        <div class="mt-5 flex items-center gap-3">
-          <a href="https://www.linkedin.com/in/john-baeza-marchant-02093539" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.06 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05c.53-1 1.85-2.05 3.81-2.05C19.5 8 21 10.2 21 14.02V23h-4v-8.1c0-1.93-.03-4.42-2.69-4.42-2.7 0-3.11 2.1-3.11 4.28V23h-4V8z"/></svg>
-          </a>
-          <a href="#" aria-label="X (Twitter)" class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.9h3.3l-7.2 8.2 8.5 11.2h-6.6l-5.2-6.8-6 6.8H2.4l7.7-8.8L1.9 1.9h6.8l4.7 6.2 5.5-6.2zm-1.2 17.4h1.8L7.4 3.6H5.5l12.2 15.7z"/></svg>
-          </a>
-          <a href="#" aria-label="Correo electrónico" class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-          </a>
-        </div>
-      </div>
-
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-badge" aria-hidden="true">
+        <img src="assets/logo-icon.png" alt="" width="30" height="30">
+      </span>
       <div>
-        <h3 class="text-sm font-semibold text-white">Navegación</h3>
-        <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href="#servicios" class="hover:text-white transition-colors">Servicios</a></li>
-          <li><a href="#reportes" class="hover:text-white transition-colors">Reportes</a></li>
-          <li><a href="#nosotros" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
-          <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
-        </ul>
+        <p class="footer-logo-text">GRUPO EXPER<em>360</em></p>
+        <p class="footer-tagline">Tecnología · Datos · Experiencia de Cliente</p>
       </div>
-
-      <div>
-        <h3 class="text-sm font-semibold text-white">Servicios</h3>
-        <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href="#servicios" class="hover:text-white transition-colors">Cumplimiento de Metas</a></li>
-          <li><a href="#servicios" class="hover:text-white transition-colors">Gestión de Fuerza de Venta</a></li>
-          <li><a href="#servicios" class="hover:text-white transition-colors">Productividad Comercial</a></li>
-          <li><a href="#servicios" class="hover:text-white transition-colors">BI y Tableros Automatizados</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-sm font-semibold text-white">Contacto</h3>
-        <ul class="mt-4 space-y-3 text-sm">
-          <li class="flex items-start gap-2.5">
-            <i data-lucide="mail" class="w-4 h-4 mt-0.5 shrink-0"></i>
-            <a href="mailto:contacto@jbminsights.com" class="hover:text-white transition-colors">contacto@jbminsights.com</a>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <i data-lucide="phone" class="w-4 h-4 mt-0.5 shrink-0"></i>
-            <a href="tel:+56958170753" class="hover:text-white transition-colors">+56 9 5817 0753</a>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0"></i>
-            <span>Disponible para clientes remotos e híbridos</span>
-          </li>
-        </ul>
-      </div>
-
     </div>
 
-    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-      <p>© <span id="current-year">2026</span> JBM Insights. Todos los derechos reservados.</p>
-      <div class="flex items-center gap-6">
-        <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
-        <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+    <div class="footer-links">
+      <div>
+        <h4>Empresas</h4>
+        <a href="https://www.intechpro.cl/" target="_blank" rel="noopener noreferrer">IntechPro</a>
+        <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener noreferrer">JBM Insights</a>
+        <a href="https://www.cxdip.com/#inicio" target="_blank" rel="noopener noreferrer">CXDIP</a>
+      </div>
+      <div>
+        <h4>Grupo</h4>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#ecosistema">Ecosistema</a>
+        <a href="#contacto">Contacto</a>
       </div>
     </div>
   </div>
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> Grupo Exper360. Todos los derechos reservados.</p>
+    <p class="footer-domain">exper360.cl</p>
+  </div>
 </footer>
 
-<script src="js/main.js"></script>
+<button class="to-top" id="toTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15 12 9l-6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
