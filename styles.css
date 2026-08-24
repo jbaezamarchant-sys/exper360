@@ -15,14 +15,15 @@
     --text-muted: #9fb0c3;
     --text-faint: #6b7d93;
 
-    /* Colores de marca — extraídos del logo Exper360 */
-    --tech: #16bfb4;   /* teal — IntechPro */
-    --bi: #2f7fe0;     /* azul — JBM Insights */
-    --cx: #8ca6b8;     /* gris azulado — CXDIP */
+    /* Colores de marca — Exper360 (paleta redefinida 2026) */
+    --tech: #00D4AA;   /* verde — IntechPro (Tech) */
+    --bi: #F5A623;     /* ámbar — JBM Insights (BI) */
+    --cx: #38BDF8;     /* celeste — CXDIP (CX) */
+    --cx-gradient: linear-gradient(90deg, #2563EB, #38BDF8); /* celeste degradado — CXDIP (CX) */
 
-    --tech-dim: rgba(22, 191, 180, 0.14);
-    --bi-dim: rgba(47, 127, 224, 0.14);
-    --cx-dim: rgba(140, 166, 184, 0.14);
+    --tech-dim: rgba(0, 212, 170, 0.14);
+    --bi-dim: rgba(245, 166, 35, 0.14);
+    --cx-dim: rgba(56, 189, 248, 0.14);
 
     --font-display: "Space Grotesk", "Inter", sans-serif;
     --font-body: "Inter", system-ui, sans-serif;
@@ -90,9 +91,9 @@ button { font-family: inherit; }
     inset: 0;
     z-index: -1;
     background:
-      radial-gradient(650px 420px at 12% -5%, rgba(22, 191, 180, 0.16), transparent 60%),
-      radial-gradient(600px 500px at 88% 10%, rgba(47, 127, 224, 0.14), transparent 60%),
-      radial-gradient(800px 600px at 50% 100%, rgba(140, 166, 184, 0.08), transparent 60%);
+      radial-gradient(650px 420px at 12% -5%, rgba(0, 212, 170, 0.16), transparent 60%),
+      radial-gradient(600px 500px at 88% 10%, rgba(245, 166, 35, 0.14), transparent 60%),
+      radial-gradient(800px 600px at 50% 100%, rgba(56, 189, 248, 0.08), transparent 60%);
     pointer-events: none;
 }
 
@@ -116,7 +117,7 @@ button { font-family: inherit; }
     background: linear-gradient(90deg, var(--tech), var(--bi));
     color: #04121a;
 }
-.btn-primary:hover { box-shadow: 0 14px 30px -10px rgba(47, 127, 224, 0.55); }
+.btn-primary:hover { box-shadow: 0 14px 30px -10px rgba(245, 166, 35, 0.55); }
 
 .btn-ghost {
     background: rgba(255, 255, 255, 0.04);
@@ -276,7 +277,7 @@ button { font-family: inherit; }
 }
 .orbit-arc.tech { stroke: var(--tech); }
 .orbit-arc.bi { stroke: var(--bi); }
-.orbit-arc.cx { stroke: var(--cx); }
+.orbit-arc.cx { stroke: url(#cxGradient); }
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 
 .orbit-center {
@@ -384,15 +385,15 @@ button { font-family: inherit; }
 }
 .company-card.tech::before { background: var(--tech); }
 .company-card.bi::before { background: var(--bi); }
-.company-card.cx::before { background: var(--cx); }
+.company-card.cx::before { background: var(--cx-gradient); }
 
 .company-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-soft);
 }
-.company-card.tech:hover { border-color: rgba(22, 191, 180, 0.4); }
-.company-card.bi:hover { border-color: rgba(47, 127, 224, 0.4); }
-.company-card.cx:hover { border-color: rgba(140, 166, 184, 0.4); }
+.company-card.tech:hover { border-color: rgba(0, 212, 170, 0.4); }
+.company-card.bi:hover { border-color: rgba(245, 166, 35, 0.4); }
+.company-card.cx:hover { border-color: rgba(56, 189, 248, 0.4); }
 
 .company-top {
     display: flex;
@@ -744,7 +745,7 @@ button { font-family: inherit; }
     max-width: 800px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    background: linear-gradient(135deg, rgba(22, 191, 180, 0.08), rgba(47, 127, 224, 0.05) 60%, transparent);
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.08), rgba(245, 166, 35, 0.05) 60%, transparent);
     padding: 44px;
 }
 .compliance-eyebrow { display: inline-flex; align-items: center; gap: 8px; }
