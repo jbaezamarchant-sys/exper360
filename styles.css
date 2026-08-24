@@ -763,3 +763,55 @@ button { font-family: inherit; }
 @media (max-width: 520px) {
     .compliance-box { padding: 26px; }
 }
+
+/* ---------- Group top bar (empresas del grupo) ---------- */
+.group-topbar {
+background: var(--bg-elevated);
+border-bottom: 1px solid var(--border-soft);
+}
+.group-topbar-inner {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 20px;
+height: 38px;
+flex-wrap: wrap;
+}
+.group-topbar-label {
+font-size: 0.76rem;
+color: var(--text-faint);
+letter-spacing: 0.02em;
+}
+.group-topbar-links {
+display: flex;
+align-items: center;
+gap: 18px;
+}
+.group-topbar-link {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-size: 0.78rem;
+font-weight: 600;
+color: var(--text-muted);
+transition: color 0.15s ease;
+}
+.group-topbar-link:hover { color: var(--text); }
+.group-topbar-icon {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.06);
+flex-shrink: 0;
+}
+.group-topbar-link.tech .group-topbar-icon { color: var(--tech); }
+.group-topbar-link.bi .group-topbar-icon { color: var(--bi); }
+.group-topbar-link.cx .group-topbar-icon { color: var(--cx); }
+
+@media (max-width: 760px) {
+.group-topbar-inner { justify-content: center; height: auto; padding: 8px 24px; }
+.group-topbar-label { width: 100%; text-align: center; }
+}
