@@ -815,3 +815,34 @@ flex-shrink: 0;
 .group-topbar-inner { justify-content: center; height: auto; padding: 8px 24px; }
 .group-topbar-label { width: 100%; text-align: center; }
 }
+
+/* ---------- Compliance steps (3 pasos) ---------- */
+.compliance-steps {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 22px;
+margin: 8px 0 28px;
+padding: 0;
+list-style: none;
+}
+.compliance-step {
+display: flex;
+gap: 14px;
+align-items: flex-start;
+}
+.compliance-step-num {
+font-family: var(--font-display);
+font-weight: 700;
+font-size: 1.3rem;
+flex-shrink: 0;
+line-height: 1.3;
+}
+.compliance-step.tech .compliance-step-num { color: var(--tech); }
+.compliance-step.bi .compliance-step-num { color: var(--bi); }
+.compliance-step.cx .compliance-step-num { color: var(--cx); }
+.compliance-step h3 { font-size: 0.98rem; margin: 0 0 4px; }
+.compliance-step p { font-size: 0.88rem; margin: 0; }
+
+@media (max-width: 760px) {
+.compliance-steps { grid-template-columns: 1fr; }
+}
