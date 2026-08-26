@@ -557,6 +557,19 @@ button { font-family: inherit; }
 .contact-list a { font-weight: 600; }
 .contact-list small { color: var(--text-faint); font-size: 0.76rem; width: 100%; padding-left: 46px; }
 
+.contact-quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 0 26px;
+}
+.contact-quick-btn {
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+.contact-quick-btn svg { flex-shrink: 0; }
+
 .contact-brands { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 8px; }
 .contact-brands a {
     font-size: 0.85rem;
@@ -605,6 +618,28 @@ button { font-family: inherit; }
 }
 .form-submit { width: 100%; justify-content: center; margin-top: 4px; }
 .form-note { font-size: 0.78rem; color: var(--text-faint); margin: 12px 0 0; text-align: center; }
+
+.form-consent { margin-bottom: 20px; }
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+.consent-label input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--bi);
+    cursor: pointer;
+}
+.consent-label span {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
 
 /* ---------- Footer ---------- */
 .site-footer {
