@@ -25,6 +25,10 @@
     --bi-dim: rgba(245, 166, 35, 0.14);
     --cx-dim: rgba(56, 189, 248, 0.14);
 
+    --danger: #F87171;         /* rojo — alertas de riesgo/incumplimiento */
+    --danger-dim: rgba(248, 113, 113, 0.14);
+    --danger-border: rgba(248, 113, 113, 0.3);
+
     --font-display: "Space Grotesk", "Inter", sans-serif;
     --font-body: "Inter", system-ui, sans-serif;
 
@@ -741,27 +745,168 @@ button { font-family: inherit; }
 
 /* ---------- Compliance banner (Ley 21.719) ---------- */
 .compliance-banner { padding: 40px 0 0; }
-.compliance-box {
-    max-width: 800px;
+
+.compliance-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.compliance-main {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: linear-gradient(135deg, rgba(0, 212, 170, 0.08), rgba(245, 166, 35, 0.05) 60%, transparent);
-    padding: 44px;
+    padding: 40px;
 }
+
 .compliance-eyebrow { display: inline-flex; align-items: center; gap: 8px; }
-.compliance-box h2 { font-size: clamp(1.4rem, 2.6vw, 1.95rem); margin-bottom: 18px; }
-.compliance-box .section-lead { font-size: 1.02rem; margin-bottom: 16px; max-width: none; }
-.compliance-box p { font-size: 0.98rem; margin-bottom: 16px; }
-.compliance-cta-line {
+.compliance-main h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin-bottom: 14px; }
+.compliance-main .section-lead { font-size: 1rem; margin-bottom: 26px; max-width: none; }
+.compliance-main .hero-actions { margin: 26px 0 0; }
+
+.compliance-label {
     font-family: var(--font-display);
+    font-size: 0.76rem;
     font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 16px;
 }
-.compliance-box .hero-actions { margin: 24px 0 0; }
+
+/* ---------- Compliance steps v2 (4 pasos, con icono) ---------- */
+.compliance-steps-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+.compliance-step-v2 {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+.compliance-step-v2 .step-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+}
+.compliance-step-v2.tech .step-icon { color: var(--tech); background: var(--tech-dim); }
+.compliance-step-v2.bi .step-icon { color: var(--bi); background: var(--bi-dim); }
+.compliance-step-v2.cx .step-icon { color: var(--cx); background: var(--cx-dim); }
+.compliance-step-v2 h3 { font-size: 0.98rem; margin: 6px 0 4px; }
+.compliance-step-v2 h3 em { font-style: normal; color: var(--tech); font-weight: 600; }
+.compliance-step-v2 p { font-size: 0.88rem; margin: 0; }
+
+.compliance-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin: 0 0 8px;
+}
+.compliance-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+.compliance-check svg { color: var(--tech); flex-shrink: 0; }
+
+/* ---------- Risk box (aside) ---------- */
+.compliance-risk {
+    border: 1px solid var(--danger-border);
+    border-radius: var(--radius);
+    background: linear-gradient(160deg, rgba(248, 113, 113, 0.1), rgba(16, 26, 46, 0.4) 55%);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+.compliance-risk-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--danger);
+    margin: 0 0 22px;
+}
+.compliance-risk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+.compliance-risk-list li { display: flex; gap: 14px; align-items: flex-start; }
+.risk-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--danger-dim);
+    color: var(--danger);
+}
+.compliance-risk-list h4 { font-size: 0.92rem; margin: 0 0 4px; color: var(--text); }
+.compliance-risk-list p { font-size: 0.84rem; margin: 0; }
+
+.compliance-risk-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 0 22px;
+}
+.compliance-risk-sectors-title {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 14px;
+}
+.compliance-sector-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.compliance-sector-badges span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--bg-elevated-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 12px;
+}
+.compliance-sector-badges svg { color: var(--text-faint); flex-shrink: 0; }
+
+@media (max-width: 900px) {
+    .compliance-grid { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 520px) {
-    .compliance-box { padding: 26px; }
+    .compliance-main { padding: 26px; }
+    .compliance-risk { padding: 24px; }
 }
 
 /* ---------- Group top bar (empresas del grupo) ---------- */
@@ -816,33 +961,3 @@ flex-shrink: 0;
 .group-topbar-label { width: 100%; text-align: center; }
 }
 
-/* ---------- Compliance steps (3 pasos) ---------- */
-.compliance-steps {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 22px;
-margin: 8px 0 28px;
-padding: 0;
-list-style: none;
-}
-.compliance-step {
-display: flex;
-gap: 14px;
-align-items: flex-start;
-}
-.compliance-step-num {
-font-family: var(--font-display);
-font-weight: 700;
-font-size: 1.3rem;
-flex-shrink: 0;
-line-height: 1.3;
-}
-.compliance-step.tech .compliance-step-num { color: var(--tech); }
-.compliance-step.bi .compliance-step-num { color: var(--bi); }
-.compliance-step.cx .compliance-step-num { color: var(--cx); }
-.compliance-step h3 { font-size: 0.98rem; margin: 0 0 4px; }
-.compliance-step p { font-size: 0.88rem; margin: 0; }
-
-@media (max-width: 760px) {
-.compliance-steps { grid-template-columns: 1fr; }
-}
