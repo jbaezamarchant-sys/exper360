@@ -324,10 +324,6 @@ button { font-family: inherit; }
 .about-copy { margin: 0; }
 
 .brand-plate {
-    background: #f3f5f8;
-    border-radius: var(--radius);
-    padding: 20px 26px;
-    box-shadow: var(--shadow-soft);
     justify-self: end;
 }
 .brand-plate img { width: 190px; height: auto; }
