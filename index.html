@@ -1,570 +1,528 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupo Exper360 | Tecnología, Datos y Experiencia de Cliente</title>
-<meta name="description" content="Grupo Exper360 es un holding que agrupa tres empresas especializadas: IntechPro (Tecnología), JBM Insights (BI &amp; Analítica) y CXDIP (Experiencia de Cliente), formando un ecosistema integral para el crecimiento de tu negocio.">
-<link rel="icon" type="image/png" href="assets/logo-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg:#080d18; --surf:#0f1626; --surf2:#151d31; --line:rgba(255,255,255,0.09);
+    --txt:#f1f5f9; --txt2:#93a3bb; --brand:#2563eb; --brand-soft:rgba(37,99,235,0.14);
+    --cx:#38bdf8; --tech:#00d4aa; --bi:#f5a623;
+    --peligro:#ef4444;
+    --cx-grad:linear-gradient(135deg,#2563eb 0%,#38bdf8 100%);
+    --cx-tinte:linear-gradient(135deg,rgba(37,99,235,0.18) 0%,rgba(56,189,248,0.18) 100%);
+  }
+  html:has([data-modo="Claro"]), html:has([data-modo="Claro"]) body, [data-modo="Claro"] {
+    --bg:#f8fafc; --surf:#ffffff; --surf2:#f1f5f9; --line:#e2e8f0;
+    --txt:#0f172a; --txt2:#52627a; --brand-soft:rgba(37,99,235,0.09);
+    --cx:#0369a1; --tech:#0f766e; --bi:#b45309; --peligro:#b91c1c;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font-family:"IBM Plex Sans",system-ui,sans-serif; }
+  html { scroll-behavior:smooth; }
+  a { color:var(--brand); text-decoration:none; }
+  a:hover { color:#60a5fa; }
+  :focus-visible { outline:2px solid var(--brand); outline-offset:2px; }
+  ::selection { background:rgba(37,99,235,0.32); }
+  input, select, textarea { font-family:inherit; }
+  @keyframes deriva { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(4%,-3%) scale(1.08); } }
+  @keyframes orbita { to { transform: rotate(360deg); } }
+  @keyframes orbita-inv { to { transform: rotate(-360deg); } }
+  @keyframes latido { 0%,100% { transform: scale(1); opacity:.55 } 50% { transform: scale(1.13); opacity:.15 } }
+  @media (prefers-reduced-motion: reduce) { [data-gira] { animation: none !important; } }
+  @media (max-width: 1080px) { [data-desk] { display:none !important; } [data-mob] { display:flex !important; } }
+  @media (max-width: 420px) { [data-brandsub] { display:none !important; } }
+</style>
+</helmet>
 
-<div class="bg-glow" aria-hidden="true"></div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><rect width="240" height="240" fill="#080d18"/><circle cx="120" cy="120" r="52" fill="none" stroke="#2563eb" stroke-width="9"/><circle cx="120" cy="120" r="17" fill="#2563eb"/><circle cx="120" cy="60" r="15" fill="#38bdf8"/><circle cx="172" cy="150" r="15" fill="#00d4aa"/><circle cx="68" cy="150" r="15" fill="#f5a623"/></svg></template>
 
-<div class="group-topbar">
-<div class="container group-topbar-inner">
-<span class="group-topbar-label">Empresas del grupo:</span>
-<nav class="group-topbar-links" aria-label="Empresas del Grupo Exper360">
-<a href="https://www.intechpro.cl/" target="_blank" rel="noopener noreferrer" class="group-topbar-link tech">
-<span class="group-topbar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
-IntechPro
-</a>
-<a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener noreferrer" class="group-topbar-link bi">
-<span class="group-topbar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
-JBM Insights
-</a>
-<a href="https://www.cxdip.com/#inicio" target="_blank" rel="noopener noreferrer" class="group-topbar-link cx">
-<span class="group-topbar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span>
-CXDIP
-</a>
-</nav>
-</div>
-</div>
+<div data-modo="{{ modo }}" style="background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;min-height:100vh">
 
-<header class="site-header" id="top">
-  <div class="container header-inner">
-    <a href="#top" class="logo" aria-label="Grupo Exper360 — Inicio">
-      <span class="logo-badge" aria-hidden="true">
-        <img src="assets/logo-icon.png" alt="" width="32" height="32">
-      </span>
-      <span class="logo-text">
-        <span class="logo-group">GRUPO</span>
-        <span class="logo-name">EXPER<em>360</em></span>
-      </span>
-    </a>
+  <header style="position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px);height:70px;display:flex;align-items:center;gap:clamp(14px,3vw,36px)">
+      <a href="#inicio" style="display:flex;align-items:center;gap:11px;color:var(--txt);flex:0 0 auto">
+        <img src="assets/logo-icon.png" alt="" style="width:38px;height:38px;object-fit:contain;flex:0 0 auto;display:block">
+        <span style="display:flex;flex-direction:column;gap:2px">
+          <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;line-height:1">EXPER360</span>
+          <span data-brandsub="" style="font-size:8.5px;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;color:var(--txt2);line-height:1">Consultoría integral · CX, BI &amp; Tech</span>
+        </span>
+      </a>
+      <nav data-desk="" style="display:flex;gap:clamp(14px,2vw,26px);margin-left:auto;font-size:14.5px;font-weight:500;white-space:nowrap">
+        <a href="#inicio" style="color:var(--txt2)" style-hover="color:var(--txt)">Inicio</a>
+        <a href="#ecosistema" style="color:var(--txt2)" style-hover="color:var(--txt)">Ecosistema</a>
+        <a href="#soluciones" style="color:var(--txt2)" style-hover="color:var(--txt)">Soluciones</a>
+        <a href="#ley" style="color:var(--txt2)" style-hover="color:var(--txt)">Ley 21.719</a>
+        <a href="#contacto" style="color:var(--txt2)" style-hover="color:var(--txt)">Contacto</a>
+      </nav>
+      <a href="#contacto" data-desk="" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:600;font-size:14px;padding:11px 20px;border-radius:10px;white-space:nowrap;flex:0 0 auto" style-hover="background:#1d4ed8">
+        Agendar diagnóstico gratis
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <button type="button" onClick="{{ cambiarModo }}" aria-label="Cambiar modo claro u oscuro" title="Cambiar modo claro u oscuro" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--txt2);cursor:pointer;flex:0 0 auto;transition:color 160ms ease, border-color 160ms ease" style-hover="color:var(--txt);border-color:var(--brand)">
+        <sc-if value="{{ esOscuro }}" hint-placeholder-val="{{ true }}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+        </sc-if>
+        <sc-if value="{{ esClaro }}" hint-placeholder-val="{{ false }}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </sc-if>
+      </button>
+      <button type="button" data-mob="" onClick="{{ toggleMenu }}" aria-label="Menú" style="display:none;margin-left:auto;align-items:center;justify-content:center;width:42px;height:42px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;color:var(--txt);cursor:pointer;flex:0 0 auto">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+      </button>
+    </div>
+    <sc-if value="{{ menuAbierto }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid var(--line);background:var(--surf);padding:14px clamp(16px,4vw,32px) 20px;display:flex;flex-direction:column;gap:2px">
+        <a href="#ecosistema" onClick="{{ cerrarMenu }}" style="color:var(--txt);padding:11px 0;font-weight:500;border-bottom:1px solid var(--line)">Ecosistema</a>
+        <a href="#soluciones" onClick="{{ cerrarMenu }}" style="color:var(--txt);padding:11px 0;font-weight:500;border-bottom:1px solid var(--line)">Soluciones</a>
+        <a href="#ley" onClick="{{ cerrarMenu }}" style="color:var(--txt);padding:11px 0;font-weight:500;border-bottom:1px solid var(--line)">Ley 21.719</a>
+        <a href="#contacto" onClick="{{ cerrarMenu }}" style="color:var(--txt);padding:11px 0;font-weight:500">Contacto</a>
+        <a href="#contacto" onClick="{{ cerrarMenu }}" style="margin-top:10px;text-align:center;background:var(--brand);color:#fff;font-weight:600;padding:13px 20px;border-radius:10px">Agendar diagnóstico gratis</a>
+      </div>
+    </sc-if>
+  </header>
 
-    <nav class="main-nav" id="mainNav">
-      <a href="#empresas">Empresas</a>
-      <a href="#ecosistema">Ecosistema</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-
-    <a href="#contacto" class="btn btn-primary btn-small header-cta">Hablemos</a>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<main>
-
-  <!-- CUMPLIMIENTO LEY 21.719 -->
-  <section class="compliance-banner" id="ley-21719" aria-labelledby="compliance-heading">
-    <div class="container">
-      <div class="compliance-grid" data-reveal>
-
-        <div class="compliance-main">
-          <p class="eyebrow compliance-eyebrow">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/></svg>
-            Ley 21.719 · Protección de Datos Personales
-          </p>
-          <h2 id="compliance-heading">¿Tu negocio está listo para la nueva ley?</h2>
-          <p class="section-lead">
-            La Ley 21.719 exige trazabilidad y buen uso de los datos de tu empresa. En Grupo Exper360 alineamos
-            la captura, el análisis y la gestión de esos datos a la normativa desde el diseño, sin fricción
-            para tu equipo comercial.
-          </p>
-
-          <p class="compliance-label">Proceso de adaptación</p>
-          <ul class="compliance-steps-v2">
-            <li class="compliance-step-v2 tech">
-              <span class="step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-              </span>
-              <div>
-                <h3>Diagnóstico inicial <em>— gratis</em></h3>
-                <p>Revisamos cómo capturas y tratas datos hoy, y dónde estás expuesto.</p>
-              </div>
-            </li>
-            <li class="compliance-step-v2 bi">
-              <span class="step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-              </span>
-              <div>
-                <h3>Rediseño de políticas</h3>
-                <p>Ajustamos procesos y consentimientos a la nueva norma.</p>
-              </div>
-            </li>
-            <li class="compliance-step-v2 cx">
-              <span class="step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
-              </span>
-              <div>
-                <h3>Implementación técnica</h3>
-                <p>Tótems, tableros y sistemas CX listos para auditoría.</p>
-              </div>
-            </li>
-            <li class="compliance-step-v2 tech">
-              <span class="step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
-              </span>
-              <div>
-                <h3>Cumplimiento continuo</h3>
-                <p>Monitoreo y ajustes a medida que la fiscalización avanza.</p>
-              </div>
-            </li>
-          </ul>
-
-          <div class="compliance-checks">
-            <span class="compliance-check">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Consentimiento explícito y trazable
-            </span>
-            <span class="compliance-check">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Privacidad por diseño
-            </span>
-          </div>
-
-          <div class="hero-actions">
-            <a href="#contacto" class="btn btn-primary">Solicita diagnóstico gratuito</a>
-          </div>
+  <section id="inicio" style="position:relative;isolation:isolate;padding:clamp(48px,7vw,88px) 0 0">
+    <span aria-hidden="true" style="position:absolute;inset:-120px 0 -80px;z-index:-1;overflow:hidden;pointer-events:none;display:block">
+      <span data-gira="" style="position:absolute;top:-18%;right:-8%;width:min(760px,88%);aspect-ratio:1;border-radius:999px;background:radial-gradient(circle, rgba(37,99,235,0.52) 0%, rgba(37,99,235,0.20) 40%, rgba(37,99,235,0) 70%);filter:blur(28px);animation:deriva 22s ease-in-out infinite"></span>
+      <span data-gira="" style="position:absolute;bottom:-14%;left:-14%;width:min(620px,78%);aspect-ratio:1;border-radius:999px;background:radial-gradient(circle, rgba(0,212,170,0.34) 0%, rgba(0,212,170,0.11) 44%, rgba(0,212,170,0) 72%);filter:blur(34px);animation:deriva 28s ease-in-out infinite reverse"></span>
+      <span data-gira="" style="position:absolute;top:34%;left:36%;width:min(420px,58%);aspect-ratio:1;border-radius:999px;background:radial-gradient(circle, rgba(245,166,35,0.24) 0%, rgba(245,166,35,0.05) 45%, rgba(245,166,35,0) 70%);filter:blur(40px);animation:deriva 34s ease-in-out infinite"></span>
+      <span style="position:absolute;inset:0;background:radial-gradient(ellipse 90% 75% at 50% 34%, transparent 30%, color-mix(in srgb, var(--bg) 88%, transparent) 100%)"></span>
+      <span style="position:absolute;inset:0;background:linear-gradient(180deg, color-mix(in srgb, var(--bg) 0%, transparent) 55%, var(--bg) 100%)"></span>
+      <span style="position:absolute;inset:0;opacity:0.85;background-image:linear-gradient(color-mix(in srgb, var(--txt2) 20%, transparent) 1px, transparent 1px),linear-gradient(90deg, color-mix(in srgb, var(--txt2) 20%, transparent) 1px, transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 78% 68% at 50% 32%, #000 0%, transparent 78%)"></span>
+    </span>
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,5vw,64px);align-items:center">
+      <div>
+        <span style="display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);border:1px solid color-mix(in srgb, var(--brand) 35%, transparent);color:var(--brand);font-size:12.5px;font-weight:600;letter-spacing:0.04em;padding:7px 14px;border-radius:999px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
+          Tres unidades especialistas, un solo equipo
+        </span>
+        <h1 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(28px,4.2vw,46px);line-height:1.12;letter-spacing:-0.03em;margin:22px 0 20px;text-wrap:pretty">Conectamos tus datos y tecnología con lo que vive tu cliente.</h1>
+        <p style="font-size:clamp(16px,1.6vw,18.5px);color:var(--txt2);margin:0 0 30px;max-width:560px">Nos encargamos de todo: diseño, desarrollo y medición.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="#contacto" style="display:inline-flex;align-items:center;gap:9px;background:var(--brand);color:#fff;font-weight:600;font-size:15px;padding:15px 26px;border-radius:12px" style-hover="background:#1d4ed8">
+            Diagnóstico gratis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <a href="#ley" style="display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid var(--line);color:var(--txt);font-weight:600;font-size:15px;padding:15px 26px;border-radius:12px" style-hover="background:var(--surf2)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            Cumplimiento Ley 21.719
+          </a>
         </div>
+      </div>
 
-        <aside class="compliance-risk" aria-label="Riesgo económico de no cumplir">
-          <p class="compliance-risk-title">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
-            El riesgo económico de no cumplir
-          </p>
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1;max-width:440px;width:100%;justify-self:center;margin:0 auto">
 
-          <ul class="compliance-risk-list">
-            <li>
-              <span class="risk-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>
+        <span style="position:absolute;width:64%;height:64%;border-radius:999px;background:radial-gradient(circle, rgba(37,99,235,0.28) 0%, rgba(37,99,235,0) 70%);animation:latido 4.5s ease-in-out infinite" data-gira=""></span>
+
+        <span style="position:absolute;inset:14%;border:1px dashed color-mix(in srgb, var(--txt2) 38%, transparent);border-radius:999px"></span>
+        <span style="position:absolute;inset:30%;border:1px solid color-mix(in srgb, var(--txt2) 20%, transparent);border-radius:999px"></span>
+
+        <span style="position:absolute;inset:14%;animation:orbita 26s linear infinite" data-gira="">
+          <sc-for list="{{ orbita }}" as="o" hint-placeholder-count="3">
+            <span style="position:absolute;inset:0;transform:rotate({{ o.angulo }})">
+              <span style="position:absolute;left:50%;top:0;transform:translate(-50%,-50%) rotate({{ o.contra }})">
+                <a href="{{ o.url }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:9px;white-space:nowrap;background:var(--surf);border:1px solid var(--line);border-left:3px solid {{ o.color }};border-radius:999px;padding:8px 15px 8px 11px;box-shadow:0 8px 22px rgba(0,0,0,0.35);animation:orbita-inv 26s linear infinite;color:var(--txt);text-decoration:none" style-hover="border-color:{{ o.color }};background:var(--surf2)" data-gira="">
+                  <span style="width:9px;height:9px;border-radius:999px;background:{{ o.color }};flex:0 0 auto"></span>
+                  <span style="display:flex;flex-direction:column;gap:1px">
+                    <span style="font-family:'Sora',sans-serif;font-weight:600;font-size:13.5px;line-height:1.15">{{ o.nombre }}</span>
+                    <span style="font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);line-height:1.15">{{ o.rol }}</span>
+                  </span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="{{ o.color }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-left:1px"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                </a>
               </span>
-              <div>
-                <h4>4% de ingresos anuales o hasta 20.000 UTM</h4>
-                <p>Multas severas: sanciones que pueden comprometer la estabilidad financiera del negocio.</p>
-              </div>
-            </li>
-            <li>
-              <span class="risk-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg>
-              </span>
-              <div>
-                <h4>Fiscalización estricta</h4>
-                <p>Agencia de Protección de Datos Personales, con facultad de auditar y sancionar activamente.</p>
-              </div>
-            </li>
-            <li>
-              <span class="risk-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
-              </span>
-              <div>
-                <h4>Suspensión de operaciones</h4>
-                <p>Y pérdida reputacional frente a clientes, socios y el mercado.</p>
-              </div>
-            </li>
-          </ul>
+            </span>
+          </sc-for>
+        </span>
 
-          <div class="compliance-risk-divider"></div>
+        <span style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--surf);border:1px solid var(--line);border-radius:999px;width:41%;aspect-ratio:1;justify-content:center;box-shadow:0 10px 34px rgba(0,0,0,0.4)">
+          <img src="assets/logo-icon.png" alt="" style="width:38%;max-width:62px;object-fit:contain;display:block">
+          <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(15px,3.4vw,19px);letter-spacing:-0.02em">EXPER360</span>
+          <span style="font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--txt2)">Un solo equipo</span>
+        </span>
+      </div>
+    </div>
+    </div>
+  </section>
 
-          <p class="compliance-risk-sectors-title">La agencia fiscaliza a todo sector</p>
-          <div class="compliance-sector-badges">
-            <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg> Municipal</span>
-            <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 14c1.5-1.5 2-3 2-5a5 5 0 0 0-9-3 5 5 0 0 0-9 3c0 2 .5 3.5 2 5l7 7Z"/></svg> Salud</span>
-            <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg> Financiero</span>
-            <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6l-3-4Z"/><path d="M3 6h18M9 10a3 3 0 0 1-6 0M15 10a3 3 0 0 1-6 0M21 10a3 3 0 0 1-6 0"/></svg> Retail</span>
-          </div>
-        </aside>
-
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(16px,4vw,32px) 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden">
+      <div style="background:var(--bg);padding:26px 24px">
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:30px;letter-spacing:-0.02em">3</div>
+        <div style="font-size:14px;color:var(--txt2);margin-top:2px">unidades especialistas bajo una misma dirección</div>
+      </div>
+      <div style="background:var(--bg);padding:26px 24px">
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:30px;letter-spacing:-0.02em">End&#8209;to&#8209;end</div>
+        <div style="font-size:14px;color:var(--txt2);margin-top:2px">del diagnóstico al despliegue y la medición</div>
+      </div>
+      <div style="background:var(--bg);padding:26px 24px">
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:30px;letter-spacing:-0.02em">21.719</div>
+        <div style="font-size:14px;color:var(--txt2);margin-top:2px">adecuación a la nueva ley de datos personales</div>
       </div>
     </div>
   </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy" data-reveal>
-        <p class="eyebrow">Holding empresarial · Tecnología, Datos &amp; Experiencia</p>
-        <h1>Un ecosistema de <span class="grad-text">tres especialidades</span> para hacer crecer tu negocio.</h1>
-        <p class="hero-lead">
-          Grupo Exper360 agrupa a tres empresas expertas que trabajan como una sola: capturamos información
-          en el punto de contacto, la transformamos en decisiones y gestionamos la experiencia que
-          fideliza a tus clientes.
-        </p>
-        <div class="hero-actions">
-          <a href="#empresas" class="btn btn-primary">Conoce nuestras empresas</a>
-          <a href="#contacto" class="btn btn-ghost">Hablemos de tu proyecto</a>
-        </div>
-        <div class="hero-brands" aria-label="Empresas del grupo">
-          <span class="hero-brand tech">IntechPro</span>
-          <span class="hero-brand bi">JBM Insights</span>
-          <span class="hero-brand cx">CXDIP</span>
-        </div>
+  <sc-if value="{{ mostrarLey }}" hint-placeholder-val="{{ true }}">
+  <section id="ley" style="margin-top:clamp(48px,7vw,88px);background:var(--surf);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(48px,7vw,88px) 0">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+
+      <div style="max-width:760px">
+        <span style="display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb, var(--bi) 13%, transparent);border:1px solid color-mix(in srgb, var(--bi) 42%, transparent);color:var(--bi);font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+          Riesgo regulatorio · Plazo 1 de diciembre de 2026
+        </span>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.14;letter-spacing:-0.025em;margin:20px 0 16px;text-wrap:pretty">Ley N° 21.719: lo que cuesta no estar preparado</h2>
+        <p style="margin:0 0 12px;font-size:16.5px;color:var(--txt2)">Desde el 1 de diciembre de 2026 la Agencia de Protección de Datos Personales puede fiscalizar de oficio, multar y suspender operaciones. A diferencia de la Ley 19.628, que estuvo dos décadas sin capacidad real de sanción, esta ley tiene una autoridad con atribuciones y un registro público de infractores.</p>
+        <p style="margin:0 0 40px;font-size:16.5px;color:var(--txt2)">La exposición no es solo la multa. Es la suspensión del tratamiento de datos, la inscripción visible durante cinco años y el efecto sobre licitaciones y auditorías de clientes.</p>
       </div>
 
-      <div class="hero-visual" data-reveal>
-        <div class="orbit-diagram">
-          <svg viewBox="0 0 360 360" class="orbit-svg">
-            <defs>
-              <linearGradient id="cxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#2563EB"/>
-                <stop offset="100%" stop-color="#38BDF8"/>
-              </linearGradient>
-            </defs>
-            <circle cx="180" cy="180" r="150" class="orbit-ring" />
-            <circle cx="180" cy="180" r="150" class="orbit-arc tech" pathLength="100" stroke-dasharray="31 100" stroke-dashoffset="0"/>
-            <circle cx="180" cy="180" r="150" class="orbit-arc bi" pathLength="100" stroke-dasharray="31 100" stroke-dashoffset="-33.3"/>
-            <circle cx="180" cy="180" r="150" class="orbit-arc cx" pathLength="100" stroke-dasharray="31 100" stroke-dashoffset="-66.6"/>
-          </svg>
-          <div class="orbit-center">
-            <span class="orbit-center-num">360°</span>
-            <span class="orbit-center-label">Ciclo Exper</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin-bottom:20px">
+        <sc-for list="{{ multas }}" as="m" hint-placeholder-count="3">
+          <div style="background:var(--bg);border:1px solid var(--line);border-top:3px solid {{ m.color }};border-radius:16px;padding:24px">
+            <div style="font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:{{ m.color }}">{{ m.nivel }}</div>
+            <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(26px,3vw,34px);letter-spacing:-0.025em;margin:8px 0 2px">{{ m.utm }}</div>
+            <div style="font-size:13.5px;color:var(--txt2);margin-bottom:12px">{{ m.pesos }}</div>
+            <p style="margin:0;font-size:14px;color:var(--txt2)">{{ m.ejemplo }}</p>
           </div>
-          <div class="orbit-node node-tech">
-            <span class="node-dot"></span>
-            <span class="node-label">Tech<br><small>Captura</small></span>
-          </div>
-          <div class="orbit-node node-bi">
-            <span class="node-dot"></span>
-            <span class="node-label">BI &amp; Data<br><small>Analiza</small></span>
-          </div>
-          <div class="orbit-node node-cx">
-            <span class="node-dot"></span>
-            <span class="node-label">CX<br><small>Gestiona</small></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE EL GRUPO -->
-  <section class="about" id="nosotros">
-    <div class="container">
-      <div class="about-head">
-        <div class="section-head about-copy" data-reveal>
-          <p class="eyebrow">Sobre el grupo</p>
-          <h2>Tres empresas, un mismo objetivo: resultados medibles.</h2>
-          <p class="section-lead">
-            Nacimos para cerrar la brecha entre la tecnología que capta datos, la analítica que los convierte
-            en decisiones, y la experiencia de cliente que transforma esas decisiones en resultados. Cada
-            empresa del grupo opera con su propia identidad y equipo especializado, y juntas ofrecen algo
-            que por separado es difícil de conseguir: una mirada 360° del negocio.
-          </p>
-        </div>
-        <div class="brand-plate" data-reveal>
-          <img src="assets/logo-full.png" alt="Logotipo de Grupo Exper360 — Consultoría integral CX, BI &amp; Tech" width="300" height="254">
-        </div>
+        </sc-for>
       </div>
 
-      <div class="pillars" data-reveal>
-        <div class="pillar">
-          <span class="pillar-icon tech">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;margin-bottom:clamp(40px,6vw,64px)">
+        <sc-for list="{{ agravantes }}" as="g" hint-placeholder-count="4">
+          <div style="display:flex;gap:12px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
+            <span style="flex:0 0 auto;margin-top:2px;color:var(--bi)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"></path><path d="M12 17h.01"></path><circle cx="12" cy="12" r="10"></circle></svg>
+            </span>
+            <span>
+              <span style="display:block;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;margin-bottom:3px">{{ g.titulo }}</span>
+              <span style="display:block;font-size:13.5px;color:var(--txt2)">{{ g.detalle }}</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);border:1px solid color-mix(in srgb, var(--brand) 35%, transparent);color:var(--brand);font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            Cómo lo resolvemos
           </span>
-          <h3>Tecnología</h3>
-          <p>Hardware y software que digitaliza el punto de venta y la operación: tótems, e-commerce y pagos.</p>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(23px,2.6vw,30px);line-height:1.16;letter-spacing:-0.02em;margin:18px 0 14px;text-wrap:pretty">Adecuación en las tres capas, sobre un mismo levantamiento</h3>
+          <p style="margin:0 0 22px;font-size:16px;color:var(--txt2)">Cumplir obliga a saber qué datos existen, con qué base legal se tratan, quién los consulta y cómo se responde cuando una persona ejerce sus derechos. Eso toca procesos, sistemas y evidencia al mismo tiempo, y por eso rara vez lo resuelve un proveedor solo.</p>
+          <a href="#contacto" style="display:inline-flex;align-items:center;gap:9px;background:var(--brand);color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:12px" style-hover="background:#1d4ed8">
+            Evaluar mi exposición
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </div>
-        <div class="pillar">
-          <span class="pillar-icon bi">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
-          </span>
-          <h3>BI &amp; Analítica</h3>
-          <p>Tableros y KPIs que convierten datos comerciales en cumplimiento de metas y productividad real.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-icon cx">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
-          </span>
-          <h3>Experiencia de Cliente</h3>
-          <p>Sistemas CX y Loyalty gestionables que convierten la voz del cliente en planes de acción.</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ capasLey }}" as="c" hint-placeholder-count="3">
+            <div style="background:var(--bg);border:1px solid var(--line);border-left:3px solid {{ c.color }};border-radius:16px;padding:22px 24px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:{{ c.color }}">{{ c.unidad }}</span>
+                <span style="font-size:12.5px;color:var(--txt2)">{{ c.capa }}</span>
+              </div>
+              <p style="margin:0;font-size:14.5px;color:var(--txt2)">{{ c.detalle }}</p>
+            </div>
+          </sc-for>
         </div>
       </div>
+
+      <p style="margin:26px 0 0;font-size:12.5px;color:var(--txt2);max-width:760px">Valores en pesos referenciales según el valor de la UTM a 2026. El monto final depende de la UTM vigente al momento de la sanción, del tamaño de la empresa y de las circunstancias del caso.</p>
     </div>
   </section>
+  </sc-if>
 
-  <!-- NUESTRAS EMPRESAS -->
-  <section class="companies" id="empresas">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Nuestras empresas</p>
-        <h2>Tres marcas especializadas, un mismo estándar de calidad.</h2>
-      </div>
+  <section id="ecosistema" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(16px,4vw,32px) 0">
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand)">Ecosistema</span>
+    <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.14;letter-spacing:-0.025em;margin:12px 0 12px;max-width:720px;text-wrap:pretty">Nuestro ecosistema de soluciones</h2>
+    <p style="margin:0 0 40px;max-width:640px;font-size:17px;color:var(--txt2)">Cada unidad resuelve una capa del problema. Juntas cierran la brecha entre lo que la empresa quiere entregar, lo que sus sistemas permiten y lo que sus datos demuestran.</p>
 
-      <div class="company-grid">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
 
-        <article class="company-card tech" data-reveal>
-          <div class="company-top">
-            <span class="company-tag">Tecnología</span>
-            <span class="company-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
-            </span>
-          </div>
-          <h3 class="company-name">IntechPro</h3>
-          <p class="company-tagline">Tótems, menús digitales, e-commerce &amp; data</p>
-          <p class="company-desc">
-            Equipa restaurantes, cafeterías y tiendas retail con tótems interactivos de autoservicio,
-            cartas digitales personalizables y plataformas e-commerce de alta conversión con pagos
-            integrados.
-          </p>
-          <ul class="company-services">
-            <li>Tótems de autoservicio con pago integrado</li>
-            <li>Menús digitales y comandera de cocina (KDS)</li>
-            <li>Desarrollo e-commerce y dashboards de venta</li>
-          </ul>
-          <a href="https://www.intechpro.cl/" target="_blank" rel="noopener noreferrer" class="btn btn-outline company-cta">
-            Visitar intechpro.cl
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-        </article>
-
-        <article class="company-card bi" data-reveal>
-          <div class="company-top">
-            <span class="company-tag">BI &amp; Analítica</span>
-            <span class="company-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
-            </span>
-          </div>
-          <h3 class="company-name">JBM Insights</h3>
-          <p class="company-tagline">BI y analítica para gestión comercial B2B</p>
-          <p class="company-desc">
-            Impulsa la venta con datos, no con corazonadas: tableros de cumplimiento de metas,
-            productividad por sucursal y desempeño de la fuerza de venta, siempre actualizados.
-          </p>
-          <ul class="company-services">
-            <li>Cumplimiento de metas comerciales en tiempo real</li>
-            <li>Gestión y ranking de fuerza de venta</li>
-            <li>Dashboards ejecutivos automatizados</li>
-          </ul>
-          <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline company-cta">
-            Visitar JBM Insights
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-        </article>
-
-        <article class="company-card cx" data-reveal>
-          <div class="company-top">
-            <span class="company-tag">Experiencia de Cliente</span>
-            <span class="company-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
-            </span>
-          </div>
-          <h3 class="company-name">CXDIP</h3>
-          <p class="company-tagline">Boutique de experiencias · Sistemas CX a tu medida</p>
-          <p class="company-desc">
-            Convierte la voz de tus clientes en sistemas gestionables y rentabilizables: paneles CX
-            y Loyalty 360°, estudios relacionales y capacitación para todos los niveles de la organización.
-          </p>
-          <ul class="company-services">
-            <li>Paneles CX &amp; Loyalty gerenciales y por sucursal</li>
-            <li>Estudios relacionales y probabilidad de fuga</li>
-            <li>Capacitación CX para frontline y comité ejecutivo</li>
-          </ul>
-          <a href="https://www.cxdip.com/#inicio" target="_blank" rel="noopener noreferrer" class="btn btn-outline company-cta">
-            Visitar CXDIP
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ECOSISTEMA / CICLO -->
-  <section class="ecosystem" id="ecosistema">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">El ciclo Exper360</p>
-        <h2>Captura, analiza y gestiona: un solo flujo de valor.</h2>
-        <p class="section-lead">
-          Las tres empresas del grupo se conectan en un mismo ciclo. Puedes trabajar con una sola,
-          o integrarlas para cubrir todo el recorrido: desde el punto de contacto con tu cliente
-          hasta la decisión que mejora su experiencia.
-        </p>
-      </div>
-
-      <div class="flow" data-reveal>
-        <div class="flow-step">
-          <span class="flow-num tech">01</span>
-          <h3>Captura — IntechPro</h3>
-          <p>Tótems, e-commerce y medios de pago generan datos de cada transacción y comportamiento de compra.</p>
+      <article style="background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:30px 28px 28px;display:flex;flex-direction:column" style-hover="border-color:var(--cx)">
+        <span style="width:48px;height:48px;border-radius:13px;background:var(--cx-tinte);color:var(--cx);display:flex;align-items:center;justify-content:center">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </span>
+        <div style="display:flex;align-items:baseline;gap:10px;margin:20px 0 6px">
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.02em;margin:0">CXDIP</h3>
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--cx)">Customer Experience</span>
         </div>
-        <div class="flow-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </div>
-        <div class="flow-step">
-          <span class="flow-num bi">02</span>
-          <h3>Analiza — JBM Insights</h3>
-          <p>Esos datos se transforman en tableros de cumplimiento de metas y productividad comercial.</p>
-        </div>
-        <div class="flow-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </div>
-        <div class="flow-step">
-          <span class="flow-num cx">03</span>
-          <h3>Gestiona — CXDIP</h3>
-          <p>Los insights se accionan en la experiencia del cliente: retención, loyalty y planes de mejora.</p>
-        </div>
-        <div class="flow-loop" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 6M20 4v4h-4"/></svg>
-          <span>y vuelve a empezar</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- POR QUÉ -->
-  <section class="why">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Por qué Grupo Exper360</p>
-        <h2>Un solo interlocutor para todo el recorrido de tu cliente.</h2>
-      </div>
-      <div class="why-grid" data-reveal>
-        <div class="why-card">
-          <h3>Ecosistema integral</h3>
-          <p>Tecnología, datos y experiencia trabajando en conjunto en lugar de proveedores aislados.</p>
-        </div>
-        <div class="why-card">
-          <h3>Equipos especializados</h3>
-          <p>Cada empresa mantiene foco y expertise en su disciplina, con estándares compartidos de calidad.</p>
-        </div>
-        <div class="why-card">
-          <h3>Escalable a tu ritmo</h3>
-          <p>Empieza con una empresa del grupo y suma las demás cuando tu negocio lo necesite.</p>
-        </div>
-        <div class="why-card">
-          <h3>Un punto de contacto</h3>
-          <p>Coordinamos internamente entre las tres marcas para simplificar la gestión de tu proyecto.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="container contact-inner">
-      <div class="contact-copy" data-reveal>
-        <p class="eyebrow">Contacto</p>
-        <h2>Conversemos sobre tu proyecto.</h2>
-        <p class="section-lead">
-          Cuéntanos qué necesitas y te conectamos con la empresa del grupo (o la combinación de ellas)
-          que mejor se ajusta a tu negocio.
-        </p>
-        <div class="contact-quick-actions">
-          <a href="https://wa.me/56900000000" target="_blank" rel="noopener noreferrer" class="btn btn-outline contact-quick-btn">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l1.4-4.1A8.5 8.5 0 1 1 8 20.5L3 21z"/><path d="M8.5 9.5c0 3 2.9 6 6 6 .8 0 1.4-.6 1.4-1.4v-.9l-2.1-.7-1 1a5.3 5.3 0 0 1-2.3-2.3l1-1-.7-2.1h-.9C9.1 8.1 8.5 8.7 8.5 9.5z"/></svg>
-            Escribir por WhatsApp
-          </a>
-          <a href="mailto:contacto@exper360.cl" class="btn btn-outline contact-quick-btn">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-            Enviar correo
-          </a>
-        </div>
-        <ul class="contact-list">
-          <li>
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
-            <a href="mailto:contacto@exper360.cl">contacto@exper360.cl</a>
-            <small>(reemplazar por el correo definitivo)</small>
-          </li>
-          <li>
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></span>
-            <a href="tel:+56900000000">+56 9 XXXX XXXX</a>
-            <small>(reemplazar por el teléfono definitivo)</small>
-          </li>
-          <li>
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-            <span>Santiago, Chile</span>
-            <small>(reemplazar por la dirección definitiva)</small>
-          </li>
+        <p style="margin:0 0 20px;font-size:15px;color:var(--txt2)">Diseñamos la experiencia que la empresa quiere entregar y la cultura de servicio que la sostiene, con métricas que muestran si está funcionando.</p>
+        <ul style="list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--cx)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Diseño de Customer Journeys</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--cx)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Programas de lealtad y retención</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--cx)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Medición de satisfacción (NPS, CSAT)</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--cx)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Cultura y capacitación de servicio</li>
         </ul>
-        <div class="contact-brands">
-          <a href="https://www.intechpro.cl/" target="_blank" rel="noopener noreferrer">IntechPro ↗</a>
-          <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener noreferrer">JBM Insights ↗</a>
-          <a href="https://www.cxdip.com/#inicio" target="_blank" rel="noopener noreferrer">CXDIP ↗</a>
-        </div>
-      </div>
+        <a href="https://www.cxdip.com/" target="_blank" rel="noopener" style="margin-top:auto;display:inline-flex;align-items:center;gap:8px;color:var(--cx);font-weight:600;font-size:14.5px">Visitar cxdip.com<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </article>
 
-      <form class="contact-form" data-reveal action="mailto:contacto@exper360.cl" method="post" enctype="text/plain">
-        <div class="form-row">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="Nombre" required autocomplete="name">
+      <article style="background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:30px 28px 28px;display:flex;flex-direction:column" style-hover="border-color:var(--tech)">
+        <span style="width:48px;height:48px;border-radius:13px;background:rgba(0,212,170,0.14);color:var(--tech);display:flex;align-items:center;justify-content:center">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><path d="M15 2v2"></path><path d="M15 20v2"></path><path d="M2 15h2"></path><path d="M2 9h2"></path><path d="M20 15h2"></path><path d="M20 9h2"></path><path d="M9 2v2"></path><path d="M9 20v2"></path></svg>
+        </span>
+        <div style="display:flex;align-items:baseline;gap:10px;margin:20px 0 6px;flex-wrap:wrap">
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.02em;margin:0">IntechPro</h3>
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--tech)">Tecnología y automatización</span>
         </div>
-        <div class="form-row">
-          <label for="email">Correo</label>
-          <input type="email" id="email" name="Correo" required autocomplete="email">
+        <p style="margin:0 0 20px;font-size:15px;color:var(--txt2)">Construimos la infraestructura que hace posible la experiencia diseñada: sistemas integrados, procesos automatizados y desarrollos hechos a la medida del negocio.</p>
+        <ul style="list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--tech)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Arquitectura TI e integración de sistemas</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--tech)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Implementación y despliegue de CRM</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--tech)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Automatización de procesos operacionales</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--tech)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Desarrollo a medida</li>
+        </ul>
+        <a href="https://www.intechpro.cl/" target="_blank" rel="noopener" style="margin-top:auto;display:inline-flex;align-items:center;gap:8px;color:var(--tech);font-weight:600;font-size:14.5px">Visitar intechpro.cl<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </article>
+
+      <article style="background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:30px 28px 28px;display:flex;flex-direction:column" style-hover="border-color:var(--bi)">
+        <span style="width:48px;height:48px;border-radius:13px;background:rgba(245,166,35,0.14);color:var(--bi);display:flex;align-items:center;justify-content:center">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+        </span>
+        <div style="display:flex;align-items:baseline;gap:10px;margin:20px 0 6px;flex-wrap:wrap">
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.02em;margin:0">JBM Insights</h3>
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--bi)">BI y Analytics</span>
         </div>
-        <div class="form-row">
-          <label for="company-interest">Empresa de interés</label>
-          <select id="company-interest" name="Interes">
-            <option value="No estoy seguro / quiero orientación">No estoy seguro / quiero orientación</option>
-            <option value="IntechPro (Tecnología)">IntechPro (Tecnología)</option>
-            <option value="JBM Insights (BI y Analítica)">JBM Insights (BI y Analítica)</option>
-            <option value="CXDIP (Experiencia de Cliente)">CXDIP (Experiencia de Cliente)</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="Mensaje" rows="4" required></textarea>
-        </div>
-        <div class="form-row form-consent">
-          <label class="consent-label" for="consent">
-            <input type="checkbox" id="consent" name="Consentimiento" value="Acepto el tratamiento de mis datos" required>
-            <span>Acepto que Grupo Exper360 trate mis datos (nombre, correo y mensaje) para responder esta solicitud de contacto, conforme a la Ley 21.719 de Protección de Datos Personales.</span>
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary form-submit">Enviar mensaje</button>
-        <p class="form-note">Al enviar, se abrirá tu cliente de correo predeterminado hacia contacto@exper360.cl.</p>
-      </form>
+        <p style="margin:0 0 20px;font-size:15px;color:var(--txt2)">Convertimos la operación en evidencia: trazabilidad del dato, modelos predictivos y dashboards que la dirección usa para decidir.</p>
+        <ul style="list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--bi)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Inteligencia de negocios</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--bi)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Trazabilidad y linaje de datos</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--bi)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Modelamiento predictivo</li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--bi)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Dashboards de gestión y cumplimiento</li>
+        </ul>
+        <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener" style="margin-top:auto;display:inline-flex;align-items:center;gap:8px;color:var(--bi);font-weight:600;font-size:14.5px">Visitar JBM Insights<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </article>
     </div>
   </section>
 
-</main>
+  <section id="soluciones" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(16px,4vw,32px) 0">
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand)">Soluciones</span>
+    <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.14;letter-spacing:-0.025em;margin:12px 0 34px;max-width:720px;text-wrap:pretty">Cómo entra Exper360 en una organización</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px">
+      <sc-for list="{{ fases }}" as="f" hint-placeholder-count="4">
+        <div style="border-top:2px solid var(--line);padding-top:20px">
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--brand);letter-spacing:0.08em">{{ f.n }}</div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.015em;margin:8px 0 8px">{{ f.titulo }}</h3>
+          <p style="margin:0;font-size:14.5px;color:var(--txt2)">{{ f.detalle }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="logo-badge" aria-hidden="true">
-        <img src="assets/logo-icon.png" alt="" width="30" height="30">
-      </span>
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(16px,4vw,32px) 0">
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand)">Por qué Exper360</span>
+    <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.14;letter-spacing:-0.025em;margin:12px 0 34px;max-width:680px;text-wrap:pretty">Lo que cambia cuando las tres disciplinas trabajan juntas</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">
+      <sc-for list="{{ beneficios }}" as="b" hint-placeholder-count="3">
+        <div style="background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:28px 26px">
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.015em;margin:0 0 10px">{{ b.titulo }}</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2)">{{ b.detalle }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="contacto" style="margin-top:clamp(56px,8vw,104px);background:var(--surf);border-top:1px solid var(--line);padding:clamp(48px,7vw,88px) 0">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,56px);align-items:start">
       <div>
-        <p class="footer-logo-text">GRUPO EXPER<em>360</em></p>
-        <p class="footer-tagline">Tecnología · Datos · Experiencia de Cliente</p>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.12;letter-spacing:-0.025em;margin:0 0 16px;text-wrap:pretty">Agenda un diagnóstico sin costo</h2>
+        <p style="margin:0 0 26px;font-size:16.5px;color:var(--txt2);max-width:460px">Una sesión de trabajo para revisar dónde están hoy los quiebres entre tu experiencia de cliente, tus sistemas y tus datos. Al final entregamos un mapa de brechas priorizado, sin compromiso.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:var(--txt2)">
+          <span style="display:flex;gap:10px;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Sesión de 60 minutos con las tres unidades</span>
+          <span style="display:flex;gap:10px;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Mapa de brechas priorizado por impacto</span>
+          <span style="display:flex;gap:10px;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Sin compromiso de contratación</span>
+        </div>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,34px)">
+        <sc-if value="{{ enviado }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:20px 0">
+            <span style="width:48px;height:48px;border-radius:999px;background:rgba(16,185,129,0.14);color:#10b981;display:flex;align-items:center;justify-content:center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
+            </span>
+            <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:21px;margin:0">Solicitud recibida</h3>
+            <p style="margin:0;font-size:15px;color:var(--txt2)">Gracias. Un consultor de Exper360 te contactará dentro de las próximas 24 horas hábiles para coordinar la sesión.</p>
+            <button type="button" onClick="{{ reiniciar }}" style="background:transparent;border:1px solid var(--line);color:var(--txt);font-weight:600;font-size:14px;padding:11px 20px;border-radius:10px;cursor:pointer" style-hover="background:var(--surf2)">Enviar otra solicitud</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noEnviado }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ enviar }}" style="display:flex;flex-direction:column;gap:18px">
+          <div>
+            <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);margin-bottom:10px">¿En qué área necesitas apoyo?</label>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ areas }}" as="a" hint-placeholder-count="5">
+                <button type="button" onClick="{{ a.sel }}" style="border:1px solid {{ a.borde }};background:{{ a.fondo }};color:{{ a.texto }};font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:999px;cursor:pointer;transition:all 160ms ease">{{ a.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:14px">
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);margin-bottom:7px">Nombre</label>
+              <input type="text" value="{{ form.nombre }}" onChange="{{ setNombre }}" placeholder="Nombre y apellido" style="width:100%;min-height:46px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 14px;color:var(--txt);font-size:15px">
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);margin-bottom:7px">Empresa</label>
+              <input type="text" value="{{ form.empresa }}" onChange="{{ setEmpresa }}" placeholder="Razón social" style="width:100%;min-height:46px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 14px;color:var(--txt);font-size:15px">
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);margin-bottom:7px">Email corporativo</label>
+              <input type="email" value="{{ form.email }}" onChange="{{ setEmail }}" placeholder="nombre@empresa.cl" style="width:100%;min-height:46px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 14px;color:var(--txt);font-size:15px">
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);margin-bottom:7px">Teléfono</label>
+              <input type="tel" value="{{ form.telefono }}" onChange="{{ setTelefono }}" placeholder="+56 9 0000 0000" style="width:100%;min-height:46px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 14px;color:var(--txt);font-size:15px">
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);margin-bottom:7px">Mensaje</label>
+            <textarea value="{{ form.mensaje }}" onChange="{{ setMensaje }}" placeholder="Cuéntanos brevemente el contexto y qué esperas resolver" style="width:100%;min-height:104px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--txt);font-size:15px;resize:vertical"></textarea>
+          </div>
+          <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--brand);color:#fff;font-weight:600;font-size:15.5px;padding:15px 26px;border:0;border-radius:12px;cursor:pointer" style-hover="background:#1d4ed8">
+            Agendar diagnóstico gratis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+          <p style="margin:0;font-size:12.5px;color:var(--txt2)">Tus datos se tratan conforme a la Ley N° 21.719 y solo se usan para responder esta solicitud.</p>
+        </form>
+        </sc-if>
       </div>
     </div>
+  </section>
 
-    <div class="footer-links">
-      <div>
-        <h4>Empresas</h4>
-        <a href="https://www.intechpro.cl/" target="_blank" rel="noopener noreferrer">IntechPro</a>
-        <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener noreferrer">JBM Insights</a>
-        <a href="https://www.cxdip.com/#inicio" target="_blank" rel="noopener noreferrer">CXDIP</a>
+  <footer style="background:var(--bg);border-top:1px solid var(--line);padding:clamp(40px,5vw,56px) 0 32px">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:32px">
+        <div>
+          <span style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <img src="assets/logo-icon.png" alt="" style="width:32px;height:32px;object-fit:contain;display:block">
+            <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em">EXPER360</span>
+          </span>
+          <p style="margin:0;font-size:14px;color:var(--txt2);max-width:260px">Consultora integral B2B. Experiencia de cliente, tecnología y datos en un mismo equipo.</p>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:14px">Unidades</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+            <a href="https://www.cxdip.com/" target="_blank" rel="noopener" style="color:var(--txt)" style-hover="color:var(--cx)">CXDIP · Customer Experience</a>
+            <a href="https://www.intechpro.cl/" target="_blank" rel="noopener" style="color:var(--txt)" style-hover="color:var(--tech)">IntechPro · Tecnología</a>
+            <a href="https://jbminsights.netlify.app/" target="_blank" rel="noopener" style="color:var(--txt)" style-hover="color:var(--bi)">JBM Insights · BI y Analytics</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:14px">Compañía</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+            <a href="#ley" style="color:var(--txt)" style-hover="color:var(--brand)">Ley N° 21.719</a>
+            <a href="#contacto" style="color:var(--txt)" style-hover="color:var(--brand)">Contacto</a>
+            <a href="#inicio" style="color:var(--txt)" style-hover="color:var(--brand)">Aviso legal</a>
+            <a href="#inicio" style="color:var(--txt)" style-hover="color:var(--brand)">Política de privacidad</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:14px">Contacto</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px;color:var(--txt2)">
+            <a href="mailto:contacto@exper360.cl" style="color:var(--brand)">contacto@exper360.cl</a>
+            <a href="tel:+56958170753" style="color:var(--brand)">+56 9 5817 0753</a>
+            <a href="https://exper360.cl" style="color:var(--txt2)">exper360.cl</a>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4>Grupo</h4>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#ecosistema">Ecosistema</a>
-        <a href="#contacto">Contacto</a>
+      <div style="margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--txt2)">
+        <span>© 2026 Exper360. Todos los derechos reservados.</span>
+        <span style="margin-left:auto">CXDIP · IntechPro · JBM Insights</span>
       </div>
     </div>
-  </div>
-  <div class="container footer-bottom">
-    <p>© <span id="year"></span> Grupo Exper360. Todos los derechos reservados.</p>
-    <p class="footer-domain">exper360.cl</p>
-  </div>
-</footer>
-
-<button class="to-top" id="toTop" aria-label="Volver arriba">
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15 12 9l-6 6"/></svg>
-</button>
-
-<script src="script.js"></script>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;modo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Oscuro&quot;,&quot;Claro&quot;],&quot;default&quot;:&quot;Oscuro&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Apariencia&quot;},&quot;mostrarLey&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secciones&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    try {
+      const g = localStorage.getItem("exper360-modo");
+      if (g === "Claro" || g === "Oscuro") this.setState({ modo: g });
+    } catch (e) {}
+  }
+  state = { modo: null, menu: false, area: 4, enviado: false, form: { nombre: "", empresa: "", email: "", telefono: "", mensaje: "" } };
+  set(k) { return e => { const v = e.target.value; this.setState(s => ({ form: Object.assign({}, s.form, { [k]: v }) })); }; }
+  renderVals() {
+    const sel = this.state.area;
+    const areas = ["Customer Experience", "Tecnología", "BI y Analítica", "Ley 21.719", "Solución integral Exper360"];
+    return {
+      modo: this.state.modo ?? this.props.modo ?? "Oscuro",
+      esClaro: (this.state.modo ?? this.props.modo ?? "Oscuro") === "Claro",
+      esOscuro: (this.state.modo ?? this.props.modo ?? "Oscuro") !== "Claro",
+      cambiarModo: () => {
+        const next = (this.state.modo ?? this.props.modo ?? "Oscuro") === "Claro" ? "Oscuro" : "Claro";
+        try { localStorage.setItem("exper360-modo", next); } catch (e) {}
+        this.setState({ modo: next });
+      },
+      mostrarLey: this.props.mostrarLey ?? true,
+      menuAbierto: this.state.menu,
+      toggleMenu: () => this.setState(s => ({ menu: !s.menu })),
+      cerrarMenu: () => this.setState({ menu: false }),
+      enviado: this.state.enviado,
+      noEnviado: !this.state.enviado,
+      enviar: e => { e.preventDefault(); this.setState({ enviado: true }); },
+      reiniciar: () => this.setState({ enviado: false, form: { nombre: "", empresa: "", email: "", telefono: "", mensaje: "" } }),
+      form: this.state.form,
+      setNombre: this.set("nombre"), setEmpresa: this.set("empresa"), setEmail: this.set("email"),
+      setTelefono: this.set("telefono"), setMensaje: this.set("mensaje"),
+      areas: areas.map((label, n) => ({
+        label,
+        fondo: n === sel ? "#2563eb" : "transparent",
+        texto: n === sel ? "#ffffff" : "var(--txt2)",
+        borde: n === sel ? "#2563eb" : "var(--line)",
+        sel: () => this.setState({ area: n })
+      })),
+      orbita: [
+        { nombre: "CXDIP", rol: "Experiencia", color: "var(--cx)", angulo: "0deg", contra: "0deg", url: "https://www.cxdip.com/" },
+        { nombre: "IntechPro", rol: "Tecnología", color: "var(--tech)", angulo: "120deg", contra: "-120deg", url: "https://www.intechpro.cl/" },
+        { nombre: "JBM Insights", rol: "Datos", color: "var(--bi)", angulo: "240deg", contra: "-240deg", url: "https://jbminsights.netlify.app/" }
+      ],
+      fases: [
+        { n: "01", titulo: "Diagnóstico", detalle: "Levantamos procesos, sistemas y datos en paralelo, con las tres unidades en la misma sala." },
+        { n: "02", titulo: "Diseño", detalle: "Definimos la experiencia objetivo, la arquitectura que la soporta y las métricas que la comprueban." },
+        { n: "03", titulo: "Implementación", detalle: "Integramos sistemas, automatizamos procesos y habilitamos a los equipos que operan el cambio." },
+        { n: "04", titulo: "Medición", detalle: "Dashboards en producción que muestran el efecto sobre la operación y sobre el negocio." }
+      ],
+      multas: [
+        { nivel: "Infracción leve", utm: "5.000 UTM", pesos: "≈ $348 millones", color: "var(--cx)",
+          ejemplo: "Incumplimientos formales y de transparencia: no informar al titular, registro de actividades desactualizado." },
+        { nivel: "Infracción grave", utm: "10.000 UTM", pesos: "≈ $696 millones", color: "var(--bi)",
+          ejemplo: "Tratar datos sin base legal, no atender derechos ARCO en plazo, no notificar una brecha de seguridad." },
+        { nivel: "Infracción gravísima", utm: "20.000 UTM", pesos: "≈ $1.392 millones", color: "var(--peligro)",
+          ejemplo: "Tratamiento fraudulento, omisión maliciosa del reporte de brechas, datos sensibles fuera de la ley." }
+      ],
+      agravantes: [
+        { titulo: "Reincidencia", detalle: "La multa se triplica o alcanza el 2% a 4% de los ingresos anuales por ventas, lo que resulte mayor." },
+        { titulo: "Recargo del 50%", detalle: "Si la conducta no se subsana dentro de los 60 días que fija la Agencia." },
+        { titulo: "Suspensión de operaciones", detalle: "Hasta 30 días de suspensión del tratamiento de datos en infracciones gravísimas." },
+        { titulo: "Registro público", detalle: "La sanción queda inscrita y visible durante cinco años, consultable en licitaciones y auditorías." }
+      ],
+      capasLey: [
+        { unidad: "CXDIP", capa: "Procesos de cara al cliente", color: "var(--cx)",
+          detalle: "Rediseño de los flujos donde se recoge y se usa el dato: consentimiento, ejercicio de derechos ARCO y atención de solicitudes dentro de plazo." },
+        { unidad: "IntechPro", capa: "Infraestructura técnica", color: "var(--tech)",
+          detalle: "Controles de acceso, cifrado, registro de actividad y automatización de las respuestas al titular sobre los sistemas donde el dato realmente vive." },
+        { unidad: "JBM Insights", capa: "Trazabilidad y evidencia", color: "var(--bi)",
+          detalle: "Inventario y linaje del dato de punta a punta, más dashboards de cumplimiento que permiten demostrar ante la autoridad qué se hizo y cuándo." }
+      ],
+      beneficios: [
+        { titulo: "Sin brechas entre estrategia y tecnología", detalle: "El equipo que diseña la experiencia es el mismo que la construye. No hay traspaso de documentos entre proveedores que interpretan distinto." },
+        { titulo: "Implementación end-to-end", detalle: "Del diagnóstico al sistema en producción con un solo responsable frente a la organización, un plan y un calendario." },
+        { titulo: "Retorno medible con datos", detalle: "Cada iniciativa nace con su indicador y su tablero. Lo que se implementa se puede mostrar en cifras al directorio." }
+      ]
+    };
+  }
+}
+</script>
 </body>
 </html>
