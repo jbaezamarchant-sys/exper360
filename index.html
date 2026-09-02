@@ -387,13 +387,88 @@
             <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);margin-bottom:7px">Mensaje</label>
             <textarea value="{{ form.mensaje }}" onChange="{{ setMensaje }}" placeholder="Cuéntanos brevemente el contexto y qué esperas resolver" style="width:100%;min-height:104px;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--txt);font-size:15px;resize:vertical"></textarea>
           </div>
-          <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--brand);color:#fff;font-weight:600;font-size:15.5px;padding:15px 26px;border:0;border-radius:12px;cursor:pointer" style-hover="background:#1d4ed8">
-            Agendar diagnóstico gratis
+          <div style="display:flex;align-items:flex-start;gap:10px">
+            <input type="checkbox" id="acepta-privacidad" checked="{{ form.acepta }}" onChange="{{ setAcepta }}" style="margin-top:3px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--brand);cursor:pointer">
+            <label for="acepta-privacidad" style="font-size:13px;color:var(--txt2);line-height:1.45;cursor:pointer">He leído y acepto la <a href="#privacidad" style="color:var(--brand)">Política de Privacidad</a>, y autorizo a Exper360 a tratar mis datos de contacto para responder esta solicitud, conforme a la Ley N° 21.719.</label>
+          </div>
+          <sc-if value="{{ errorEnvio }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:13.5px;color:var(--peligro)">{{ errorEnvio }}</p>
+          </sc-if>
+          <button type="submit" disabled="{{ enviando }}" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--brand);color:#fff;font-weight:600;font-size:15.5px;padding:15px 26px;border:0;border-radius:12px;cursor:pointer" style-hover="background:#1d4ed8">
+            {{ textoBoton }}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </button>
-          <p style="margin:0;font-size:12.5px;color:var(--txt2)">Tus datos se tratan conforme a la Ley N° 21.719 y solo se usan para responder esta solicitud.</p>
+          <p style="margin:0;font-size:12.5px;color:var(--txt2)">Tus datos se tratan conforme a la Ley N° 21.719 y solo se usan para responder esta solicitud. Ver <a href="#privacidad" style="color:var(--txt2);text-decoration:underline">Política de Privacidad</a>.</p>
         </form>
         </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="aviso-legal" style="background:var(--surf);border-top:1px solid var(--line);padding:clamp(40px,6vw,72px) 0">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand)">Aviso legal</span>
+      <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.2;letter-spacing:-0.02em;margin:14px 0 24px">Identificación del sitio</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;font-size:15px;color:var(--txt2);line-height:1.6">
+        <p style="margin:0">En cumplimiento de la normativa chilena aplicable, se informa que exper360.cl es operado por <strong style="color:var(--txt)">[Razón social del titular del sitio, ej. Exper360 SpA] — RUT [00.000.000-0]</strong>, con domicilio en <strong style="color:var(--txt)">[dirección comercial]</strong>, Chile.</p>
+        <p style="margin:0">Contacto: <a href="mailto:contacto@exper360.cl">contacto@exper360.cl</a> · <a href="tel:+56958170753">+56 9 5817 0753</a>.</p>
+        <p style="margin:0">El sitio tiene por objeto presentar los servicios de consultoría de Exper360 y sus unidades (CXDIP, IntechPro, JBM Insights) y permitir a los visitantes solicitar contacto comercial. Los contenidos, marcas, logotipos e imágenes del sitio son de propiedad de Exper360 o de terceros que han autorizado su uso, y no pueden reproducirse sin autorización previa.</p>
+        <p style="margin:0">Este aviso se rige por las leyes de la República de Chile. Cualquier controversia derivada del uso del sitio se someterá a los tribunales ordinarios de justicia de Chile.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacidad" style="background:var(--bg);border-top:1px solid var(--line);padding:clamp(40px,6vw,72px) 0">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand)">Protección de datos</span>
+      <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,3.2vw,34px);line-height:1.2;letter-spacing:-0.02em;margin:14px 0 12px">Política de privacidad</h2>
+      <p style="margin:0 0 32px;font-size:15px;color:var(--txt2)">Última actualización: 2 de septiembre de 2026. Esta política describe cómo Exper360 recopila, usa y protege los datos personales de quienes visitan este sitio o completan el formulario de contacto, conforme a la Ley N° 21.719 sobre Protección de Datos Personales.</p>
+
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">1. Responsable del tratamiento</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6"><strong style="color:var(--txt)">[Razón social, ej. Exper360 SpA]</strong>, RUT <strong style="color:var(--txt)">[00.000.000-0]</strong>, es responsable del tratamiento de los datos personales recogidos a través de este sitio. Puedes contactarnos en <a href="mailto:contacto@exper360.cl">contacto@exper360.cl</a> para cualquier consulta sobre esta política.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">2. Qué datos recopilamos</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">A través del formulario "Agendar diagnóstico gratis" recopilamos: nombre y apellido, razón social, correo electrónico, teléfono, área de interés y el mensaje que nos escribas. No solicitamos datos sensibles (salud, origen étnico, afiliación sindical u otros) y te pedimos no incluirlos voluntariamente en el campo de mensaje.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">3. Para qué usamos tus datos</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Usamos tus datos exclusivamente para responder tu solicitud de contacto, coordinar la sesión de diagnóstico gratuita y, si nos autorizas expresamente en el futuro, enviarte información comercial relacionada. No vendemos, arrendamos ni compartimos tus datos con terceros para fines distintos a los aquí descritos.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">4. Base de licitud</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">El tratamiento se basa en tu consentimiento expreso, otorgado al marcar la casilla de aceptación antes de enviar el formulario. Puedes retirar tu consentimiento en cualquier momento escribiéndonos a <a href="mailto:contacto@exper360.cl">contacto@exper360.cl</a>, sin que ello afecte la licitud del tratamiento previo.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">5. Encargados de tratamiento y transferencias</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Para operar el formulario de contacto utilizamos un proveedor externo de envío de correo (FormSubmit), que actúa como encargado de tratamiento y procesa los datos en servidores que pueden ubicarse fuera de Chile. Este proveedor solo utiliza los datos para transmitir tu solicitud a nuestra casilla de correo y no los conserva para fines propios. No realizamos otras transferencias internacionales de datos.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">6. Plazo de conservación</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Conservamos los datos del formulario mientras dure la relación comercial o hasta 24 meses desde el último contacto, lo que ocurra primero, salvo que la ley exija un plazo distinto o ejerzas tu derecho de cancelación antes.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">7. Tus derechos</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Conforme a la Ley N° 21.719, puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación, oposición y portabilidad de tus datos, así como solicitar información sobre decisiones automatizadas que te afecten. Para ejercerlos, escríbenos a <a href="mailto:contacto@exper360.cl">contacto@exper360.cl</a> indicando el derecho que deseas ejercer y adjuntando un medio que acredite tu identidad. Responderemos dentro del plazo legal.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">8. Seguridad</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Aplicamos medidas técnicas y organizativas razonables para proteger tus datos frente a accesos no autorizados, pérdida o alteración. Este sitio no utiliza cookies de seguimiento ni analítica de terceros.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">9. Menores de edad</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Este sitio está dirigido a personas mayores de 18 años que representan o contactan en nombre de una empresa. No recopilamos intencionalmente datos de menores de edad.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">10. Autoridad de control</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Si consideras que el tratamiento de tus datos no se ajusta a la ley, puedes presentar un reclamo ante la Agencia de Protección de Datos Personales de Chile, sin perjuicio de las demás acciones legales que te correspondan.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px">11. Cambios a esta política</h3>
+          <p style="margin:0;font-size:15px;color:var(--txt2);line-height:1.6">Podemos actualizar esta política para reflejar cambios legales u operativos. Publicaremos cualquier cambio en esta misma página junto con su fecha de actualización.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -421,8 +496,8 @@
           <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
             <a href="#ley" style="color:var(--txt)" style-hover="color:var(--brand)">Ley N° 21.719</a>
             <a href="#contacto" style="color:var(--txt)" style-hover="color:var(--brand)">Contacto</a>
-            <a href="#inicio" style="color:var(--txt)" style-hover="color:var(--brand)">Aviso legal</a>
-            <a href="#inicio" style="color:var(--txt)" style-hover="color:var(--brand)">Política de privacidad</a>
+            <a href="#aviso-legal" style="color:var(--txt)" style-hover="color:var(--brand)">Aviso legal</a>
+            <a href="#privacidad" style="color:var(--txt)" style-hover="color:var(--brand)">Política de privacidad</a>
           </div>
         </div>
         <div>
@@ -450,8 +525,9 @@ class Component extends DCLogic {
       if (g === "Claro" || g === "Oscuro") this.setState({ modo: g });
     } catch (e) {}
   }
-  state = { modo: null, menu: false, area: 4, enviado: false, form: { nombre: "", empresa: "", email: "", telefono: "", mensaje: "" } };
+  state = { modo: null, menu: false, area: 4, enviado: false, enviando: false, errorEnvio: null, form: { nombre: "", empresa: "", email: "", telefono: "", mensaje: "", acepta: false } };
   set(k) { return e => { const v = e.target.value; this.setState(s => ({ form: Object.assign({}, s.form, { [k]: v }) })); }; }
+  setAcepta = e => { const v = e.target.checked; this.setState(s => ({ form: Object.assign({}, s.form, { acepta: v }) })); };
   renderVals() {
     const sel = this.state.area;
     const areas = ["Customer Experience", "Tecnología", "BI y Analítica", "Ley 21.719", "Solución integral Exper360"];
@@ -470,11 +546,43 @@ class Component extends DCLogic {
       cerrarMenu: () => this.setState({ menu: false }),
       enviado: this.state.enviado,
       noEnviado: !this.state.enviado,
-      enviar: e => { e.preventDefault(); this.setState({ enviado: true }); },
-      reiniciar: () => this.setState({ enviado: false, form: { nombre: "", empresa: "", email: "", telefono: "", mensaje: "" } }),
+      enviando: this.state.enviando,
+      errorEnvio: this.state.errorEnvio,
+      textoBoton: this.state.enviando ? "Enviando…" : "Agendar diagnóstico gratis",
+      enviar: e => {
+        e.preventDefault();
+        if (!this.state.form.acepta) {
+          this.setState({ errorEnvio: "Debes aceptar la Política de Privacidad para continuar." });
+          return;
+        }
+        this.setState({ enviando: true, errorEnvio: null });
+        const f = this.state.form;
+        const areaSel = areas[this.state.area];
+        fetch("https://formsubmit.co/ajax/contacto@exper360.cl", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            Nombre: f.nombre,
+            Empresa: f.empresa,
+            Email: f.email,
+            Telefono: f.telefono,
+            Area: areaSel,
+            Mensaje: f.mensaje,
+            _subject: "Nueva solicitud de diagnóstico — Exper360",
+            _template: "table",
+            _captcha: "false"
+          })
+        }).then(res => {
+          if (!res.ok) throw new Error("bad status");
+          this.setState({ enviando: false, enviado: true });
+        }).catch(() => {
+          this.setState({ enviando: false, errorEnvio: "No pudimos enviar tu solicitud automáticamente. Escríbenos directo a contacto@exper360.cl o intenta nuevamente." });
+        });
+      },
+      reiniciar: () => this.setState({ enviado: false, errorEnvio: null, form: { nombre: "", empresa: "", email: "", telefono: "", mensaje: "", acepta: false } }),
       form: this.state.form,
       setNombre: this.set("nombre"), setEmpresa: this.set("empresa"), setEmail: this.set("email"),
-      setTelefono: this.set("telefono"), setMensaje: this.set("mensaje"),
+      setTelefono: this.set("telefono"), setMensaje: this.set("mensaje"), setAcepta: this.setAcepta,
       areas: areas.map((label, n) => ({
         label,
         fondo: n === sel ? "#2563eb" : "transparent",
